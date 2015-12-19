@@ -30,7 +30,7 @@ int CoordinateTransform::ct2Dto3D(cv::Point pushpt, int points)
 		return -1;
 	}
 
-	WorldCoordinate = NuiTransformDepthImageToSkeleton((long)pt[cnt_getcoordinate].x, (long)pt[cnt_getcoordinate].y, dist[onedim[cnt_getcoordinate]], NUI_IMAGE_RESOLUTION_640x480);
+	WorldCoordinate = NuiTransformDepthImageToSkeleton((long)pt[cnt_getcoordinate].x, (long)pt[cnt_getcoordinate].y, dist[onedim[cnt_getcoordinate]] << 3, NUI_IMAGE_RESOLUTION_640x480);
 
 	real_x[cnt_getcoordinate] = WorldCoordinate.x*1000.0;
 	real_y[cnt_getcoordinate] = WorldCoordinate.y*1000.0;
