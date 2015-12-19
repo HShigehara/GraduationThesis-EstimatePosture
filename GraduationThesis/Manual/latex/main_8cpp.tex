@@ -1,0 +1,378 @@
+\section{main.\-cpp ファイル}
+\label{main_8cpp}\index{main.\-cpp@{main.\-cpp}}
+
+
+クラスを使う側のファイル  
+
+
+{\ttfamily \#include \char`\"{}Estimate\-Posture.\-h\char`\"{}}\\*
+\subsection*{関数}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf Mouse} ()
+\item 
+int {\bf main} ()
+\end{DoxyCompactItemize}
+\subsection*{変数}
+\begin{DoxyCompactItemize}
+\item 
+unsigned short {\bf dist} [307200]
+\begin{DoxyCompactList}\small\item\em 距離データを格納する配列 \end{DoxyCompactList}\item 
+cv\-::\-Point {\bf pushpt} [{\bf M\-A\-X\-\_\-\-P\-O\-I\-N\-T\-S}]
+\begin{DoxyCompactList}\small\item\em 取得した点の座標 \end{DoxyCompactList}\item 
+int {\bf points}
+\begin{DoxyCompactList}\small\item\em 取得した点の数 \end{DoxyCompactList}\item 
+cv\-::\-Point {\bf pt} [{\bf M\-A\-X\-\_\-\-P\-O\-I\-N\-T\-S}]
+\begin{DoxyCompactList}\small\item\em 取得した座標のコピー \end{DoxyCompactList}\item 
+int {\bf cnt\-\_\-getcoordinate}
+\begin{DoxyCompactList}\small\item\em 座標を取得した回数をカウント \end{DoxyCompactList}\item 
+int {\bf onedim} [{\bf M\-A\-X\-\_\-\-P\-O\-I\-N\-T\-S}]
+\begin{DoxyCompactList}\small\item\em それぞれの天を一次元に直す \end{DoxyCompactList}\item 
+double {\bf real\-\_\-x} [{\bf M\-A\-X\-\_\-\-P\-O\-I\-N\-T\-S}]
+\begin{DoxyCompactList}\small\item\em 3\-D空間座標の\-X \end{DoxyCompactList}\item 
+double {\bf real\-\_\-y} [{\bf M\-A\-X\-\_\-\-P\-O\-I\-N\-T\-S}]
+\begin{DoxyCompactList}\small\item\em 3\-D空間座標の\-Y \end{DoxyCompactList}\item 
+double {\bf real\-\_\-z} [{\bf M\-A\-X\-\_\-\-P\-O\-I\-N\-T\-S}]
+\begin{DoxyCompactList}\small\item\em 3\-D空間座標の\-Z \end{DoxyCompactList}\item 
+double {\bf f1}
+\item 
+double {\bf f2}
+\item 
+double {\bf f3}
+\item 
+int64 {\bf time1}
+\item 
+int64 {\bf time2}
+\item 
+int64 {\bf time3}
+\item 
+double {\bf time1th}
+\begin{DoxyCompactList}\small\item\em \char`\"{}p\char`\"{}キーを入力してから表示するまでの時間 \end{DoxyCompactList}\item 
+double {\bf time2th}
+\begin{DoxyCompactList}\small\item\em 9点目をクリックしてから回転角度を求めるまでの時間 \end{DoxyCompactList}\item 
+double {\bf time3th}
+\begin{DoxyCompactList}\small\item\em gnuplotが作業を行っている時間 \end{DoxyCompactList}\item 
+double {\bf sumtime}
+\begin{DoxyCompactList}\small\item\em 処理にかかった時間の合計 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{詳解}
+クラスを使う側のファイル \begin{DoxyDate}{日付}
+2014/03/26 
+\end{DoxyDate}
+\begin{DoxyAuthor}{著者}
+H.\-Shigehara 
+\end{DoxyAuthor}
+
+
+ {\bf main.\-cpp} に定義があります。
+
+
+
+\subsection{関数詳解}
+\index{main.\-cpp@{main.\-cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+
+ main.\-cpp の 32 行目に定義があります。
+
+
+
+参照先 Kinect\-::initialize(), Kinect\-::run().
+
+
+\begin{DoxyCode}
+33 \{
+34     \textcolor{keywordflow}{try}\{
+35         Kinect kinect; \textcolor{comment}{//Kinectクラスのインスタンスkinectを生成}
+36 
+37         kinect.initialize();
+38 
+39         \_mkdir(\textcolor{stringliteral}{"data"});
+40         \_mkdir(\textcolor{stringliteral}{"plot\_img"});
+41 
+42         kinect.run();
+43 
+44         exit(0);
+45     \}
+46     \textcolor{keywordflow}{catch} (exception& ex)\{
+47         cout << ex.what() << endl;
+48     \}
+49     \textcolor{keywordflow}{return} 0;
+50 \}\end{DoxyCode}
+\index{main.\-cpp@{main.\-cpp}!Mouse@{Mouse}}
+\index{Mouse@{Mouse}!main.cpp@{main.\-cpp}}
+\subsubsection[{Mouse}]{\setlength{\rightskip}{0pt plus 5cm}void Mouse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{main_8cpp_a42bb1b3b1fcef46e7f9616ca10621c5d}
+
+
+\subsection{変数詳解}
+\index{main.\-cpp@{main.\-cpp}!cnt\-\_\-getcoordinate@{cnt\-\_\-getcoordinate}}
+\index{cnt\-\_\-getcoordinate@{cnt\-\_\-getcoordinate}!main.cpp@{main.\-cpp}}
+\subsubsection[{cnt\-\_\-getcoordinate}]{\setlength{\rightskip}{0pt plus 5cm}int cnt\-\_\-getcoordinate}\label{main_8cpp_aaf3df6233eba9ec5d58dc12a3db8551e}
+
+
+座標を取得した回数をカウント 
+
+
+
+ main.\-cpp の 17 行目に定義があります。
+
+
+
+参照元 Coordinate\-Transform\-::ct2\-Dto3\-D(), Kinect\-::run().
+
+\index{main.\-cpp@{main.\-cpp}!dist@{dist}}
+\index{dist@{dist}!main.cpp@{main.\-cpp}}
+\subsubsection[{dist}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short dist[307200]}\label{main_8cpp_afcfa9131bcff2392e4916bec3f2c78d1}
+
+
+距離データを格納する配列 
+
+
+
+ main.\-cpp の 12 行目に定義があります。
+
+
+
+参照元 Coordinate\-Transform\-::ct2\-Dto3\-D(), Kinect\-::\-Get\-Depth\-Data().
+
+\index{main.\-cpp@{main.\-cpp}!f1@{f1}}
+\index{f1@{f1}!main.cpp@{main.\-cpp}}
+\subsubsection[{f1}]{\setlength{\rightskip}{0pt plus 5cm}double f1}\label{main_8cpp_a11d54e4d4a8a4dfc36e4b5c8576a6079}
+
+
+ main.\-cpp の 23 行目に定義があります。
+
+
+
+参照元 Kinect\-::run().
+
+\index{main.\-cpp@{main.\-cpp}!f2@{f2}}
+\index{f2@{f2}!main.cpp@{main.\-cpp}}
+\subsubsection[{f2}]{\setlength{\rightskip}{0pt plus 5cm}double f2}\label{main_8cpp_ac287bf324063285e92e9f3b9dfb8f408}
+
+
+ main.\-cpp の 23 行目に定義があります。
+
+
+
+参照元 Coordinate\-Transform\-::ct2\-Dto3\-D().
+
+\index{main.\-cpp@{main.\-cpp}!f3@{f3}}
+\index{f3@{f3}!main.cpp@{main.\-cpp}}
+\subsubsection[{f3}]{\setlength{\rightskip}{0pt plus 5cm}double f3}\label{main_8cpp_a1d4774d4b1fa6156af69befbb5a9f079}
+
+
+ main.\-cpp の 23 行目に定義があります。
+
+
+
+参照元 Estimate\-Posture\-::\-Least\-Squre\-Method().
+
+\index{main.\-cpp@{main.\-cpp}!onedim@{onedim}}
+\index{onedim@{onedim}!main.cpp@{main.\-cpp}}
+\subsubsection[{onedim}]{\setlength{\rightskip}{0pt plus 5cm}int onedim[{\bf M\-A\-X\-\_\-\-P\-O\-I\-N\-T\-S}]}\label{main_8cpp_a3176345ea8c2caf35db75e45801d0f03}
+
+
+それぞれの天を一次元に直す 
+
+
+
+ main.\-cpp の 18 行目に定義があります。
+
+
+
+参照元 Coordinate\-Transform\-::ct2\-Dto3\-D().
+
+\index{main.\-cpp@{main.\-cpp}!points@{points}}
+\index{points@{points}!main.cpp@{main.\-cpp}}
+\subsubsection[{points}]{\setlength{\rightskip}{0pt plus 5cm}int points}\label{main_8cpp_af7f8f4a4e39e09fdb5e9f02330ecabef}
+
+
+取得した点の数 
+
+
+
+ main.\-cpp の 15 行目に定義があります。
+
+
+
+参照元 Mouse(), Kinect\-::run().
+
+\index{main.\-cpp@{main.\-cpp}!pt@{pt}}
+\index{pt@{pt}!main.cpp@{main.\-cpp}}
+\subsubsection[{pt}]{\setlength{\rightskip}{0pt plus 5cm}cv\-::\-Point pt[{\bf M\-A\-X\-\_\-\-P\-O\-I\-N\-T\-S}]}\label{main_8cpp_ac962128d9435beddc43ca532882deef2}
+
+
+取得した座標のコピー 
+
+
+
+ main.\-cpp の 16 行目に定義があります。
+
+
+
+参照元 Coordinate\-Transform\-::ct2\-Dto3\-D().
+
+\index{main.\-cpp@{main.\-cpp}!pushpt@{pushpt}}
+\index{pushpt@{pushpt}!main.cpp@{main.\-cpp}}
+\subsubsection[{pushpt}]{\setlength{\rightskip}{0pt plus 5cm}cv\-::\-Point pushpt[{\bf M\-A\-X\-\_\-\-P\-O\-I\-N\-T\-S}]}\label{main_8cpp_af77f32fe5be4d28ae0d320adde8f51af}
+
+
+取得した点の座標 
+
+
+
+ main.\-cpp の 14 行目に定義があります。
+
+
+
+参照元 Coordinate\-Transform\-::ct2\-Dto3\-D(), Mouse().
+
+\index{main.\-cpp@{main.\-cpp}!real\-\_\-x@{real\-\_\-x}}
+\index{real\-\_\-x@{real\-\_\-x}!main.cpp@{main.\-cpp}}
+\subsubsection[{real\-\_\-x}]{\setlength{\rightskip}{0pt plus 5cm}double real\-\_\-x[{\bf M\-A\-X\-\_\-\-P\-O\-I\-N\-T\-S}]}\label{main_8cpp_a3a44d2bc2273e220bc5ade2bc217d33a}
+
+
+3\-D空間座標の\-X 
+
+
+
+ main.\-cpp の 19 行目に定義があります。
+
+
+
+参照元 Coordinate\-Transform\-::ct2\-Dto3\-D(), Estimate\-Posture\-::\-Least\-Squre\-Method().
+
+\index{main.\-cpp@{main.\-cpp}!real\-\_\-y@{real\-\_\-y}}
+\index{real\-\_\-y@{real\-\_\-y}!main.cpp@{main.\-cpp}}
+\subsubsection[{real\-\_\-y}]{\setlength{\rightskip}{0pt plus 5cm}double real\-\_\-y[{\bf M\-A\-X\-\_\-\-P\-O\-I\-N\-T\-S}]}\label{main_8cpp_aac94948837fe999fddb50973fa27e450}
+
+
+3\-D空間座標の\-Y 
+
+
+
+ main.\-cpp の 20 行目に定義があります。
+
+
+
+参照元 Coordinate\-Transform\-::ct2\-Dto3\-D(), Estimate\-Posture\-::\-Least\-Squre\-Method().
+
+\index{main.\-cpp@{main.\-cpp}!real\-\_\-z@{real\-\_\-z}}
+\index{real\-\_\-z@{real\-\_\-z}!main.cpp@{main.\-cpp}}
+\subsubsection[{real\-\_\-z}]{\setlength{\rightskip}{0pt plus 5cm}double real\-\_\-z[{\bf M\-A\-X\-\_\-\-P\-O\-I\-N\-T\-S}]}\label{main_8cpp_ad04bdcf4918f232afcf6cccf8937f53b}
+
+
+3\-D空間座標の\-Z 
+
+
+
+ main.\-cpp の 21 行目に定義があります。
+
+
+
+参照元 Coordinate\-Transform\-::ct2\-Dto3\-D(), Estimate\-Posture\-::\-Least\-Squre\-Method().
+
+\index{main.\-cpp@{main.\-cpp}!sumtime@{sumtime}}
+\index{sumtime@{sumtime}!main.cpp@{main.\-cpp}}
+\subsubsection[{sumtime}]{\setlength{\rightskip}{0pt plus 5cm}double sumtime}\label{main_8cpp_a93d6409f5890605dbee315b522395064}
+
+
+処理にかかった時間の合計 
+
+
+
+ main.\-cpp の 28 行目に定義があります。
+
+
+
+参照元 Coordinate\-Transform\-::ct2\-Dto3\-D(), Kinect\-::run().
+
+\index{main.\-cpp@{main.\-cpp}!time1@{time1}}
+\index{time1@{time1}!main.cpp@{main.\-cpp}}
+\subsubsection[{time1}]{\setlength{\rightskip}{0pt plus 5cm}int64 time1}\label{main_8cpp_ae3b1b3b3559ae28919ff50cb10b4b19d}
+
+
+ main.\-cpp の 24 行目に定義があります。
+
+
+
+参照元 Kinect\-::run().
+
+\index{main.\-cpp@{main.\-cpp}!time1th@{time1th}}
+\index{time1th@{time1th}!main.cpp@{main.\-cpp}}
+\subsubsection[{time1th}]{\setlength{\rightskip}{0pt plus 5cm}double time1th}\label{main_8cpp_ad7d664c3b63ac80cd47ebac01f9710b6}
+
+
+\char`\"{}p\char`\"{}キーを入力してから表示するまでの時間 
+
+
+
+ main.\-cpp の 25 行目に定義があります。
+
+
+
+参照元 Coordinate\-Transform\-::ct2\-Dto3\-D(), Kinect\-::run().
+
+\index{main.\-cpp@{main.\-cpp}!time2@{time2}}
+\index{time2@{time2}!main.cpp@{main.\-cpp}}
+\subsubsection[{time2}]{\setlength{\rightskip}{0pt plus 5cm}int64 time2}\label{main_8cpp_ac72f11471de429ffb48a21ee867e9c86}
+
+
+ main.\-cpp の 24 行目に定義があります。
+
+
+
+参照元 Coordinate\-Transform\-::ct2\-Dto3\-D().
+
+\index{main.\-cpp@{main.\-cpp}!time2th@{time2th}}
+\index{time2th@{time2th}!main.cpp@{main.\-cpp}}
+\subsubsection[{time2th}]{\setlength{\rightskip}{0pt plus 5cm}double time2th}\label{main_8cpp_a682544663e12eb18837015a32fa84c81}
+
+
+9点目をクリックしてから回転角度を求めるまでの時間 
+
+
+
+ main.\-cpp の 26 行目に定義があります。
+
+
+
+参照元 Coordinate\-Transform\-::ct2\-Dto3\-D().
+
+\index{main.\-cpp@{main.\-cpp}!time3@{time3}}
+\index{time3@{time3}!main.cpp@{main.\-cpp}}
+\subsubsection[{time3}]{\setlength{\rightskip}{0pt plus 5cm}int64 time3}\label{main_8cpp_a0dd5ee6f0df25198c4c8bd4d78c9f3a3}
+
+
+ main.\-cpp の 24 行目に定義があります。
+
+
+
+参照元 Estimate\-Posture\-::\-Least\-Squre\-Method().
+
+\index{main.\-cpp@{main.\-cpp}!time3th@{time3th}}
+\index{time3th@{time3th}!main.cpp@{main.\-cpp}}
+\subsubsection[{time3th}]{\setlength{\rightskip}{0pt plus 5cm}double time3th}\label{main_8cpp_a1040aab8fcdc8e241d94175099912c50}
+
+
+gnuplotが作業を行っている時間 
+
+
+
+ main.\-cpp の 27 行目に定義があります。
+
+
+
+参照元 Coordinate\-Transform\-::ct2\-Dto3\-D(), Estimate\-Posture\-::\-Least\-Squre\-Method().
+

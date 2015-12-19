@@ -1,0 +1,135 @@
+\section{Plot クラス}
+\label{class_plot}\index{Plot@{Plot}}
+
+
+gnuplotによる画像を表示、保存する  
+
+
+
+
+{\ttfamily \#include $<$Estimate\-Posture.\-h$>$}
+
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf Plot\-Data} (double a, double b, double c)
+\begin{DoxyCompactList}\small\item\em 取得したデータをプロットする関数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{詳解}
+gnuplotによる画像を表示、保存する 
+
+ Estimate\-Posture.\-h の 125 行目に定義があります。
+
+
+
+\subsection{関数詳解}
+\index{Plot@{Plot}!Plot\-Data@{Plot\-Data}}
+\index{Plot\-Data@{Plot\-Data}!Plot@{Plot}}
+\subsubsection[{Plot\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void Plot\-::\-Plot\-Data (
+\begin{DoxyParamCaption}
+\item[{double}]{a, }
+\item[{double}]{b, }
+\item[{double}]{c}
+\end{DoxyParamCaption}
+)}\label{class_plot_a6a7a2dc9707933ed7f39f8e31e1438cb}
+
+
+取得したデータをプロットする関数 
+
+void \doxyref{Plot\-::\-Plot\-Data(double a,double b,double c)}{p.}{class_plot_a6a7a2dc9707933ed7f39f8e31e1438cb}関数.\-取得したデータをプロットする
+
+
+\begin{DoxyParams}{引数}
+{\em a} & 最小二乗法によって求めた平面の式a\-X+b\-Y+c=Zの係数 \\
+\hline
+{\em b} & 最小二乗法によって求めた平面の式a\-X+b\-Y+c=Zの係数 \\
+\hline
+{\em c} & 最小二乗法によって求めた平面の式a\-X+b\-Y+c=Zの係数 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+
+\end{DoxyReturn}
+
+
+ Plot\-Func.\-cpp の 17 行目に定義があります。
+
+
+
+参照元 Estimate\-Posture\-::\-Least\-Squre\-Method().
+
+
+\begin{DoxyCode}
+18 \{
+19     gnuplot = \_popen(\textcolor{stringliteral}{"gnuplot"}, \textcolor{stringliteral}{"w"});
+20     \textcolor{keywordflow}{if} (gnuplot == NULL)\{
+21         cout << \textcolor{stringliteral}{"gnuplotが開けません"} << endl;
+22     \}
+23 
+24     \textcolor{comment}{//a,b,cの値を送信}
+25     fprintf\_s(gnuplot, \textcolor{stringliteral}{"a = %f\(\backslash\)n"}, a);
+26     fprintf\_s(gnuplot, \textcolor{stringliteral}{"b = %f\(\backslash\)n"}, b);
+27     fprintf\_s(gnuplot, \textcolor{stringliteral}{"c = %f\(\backslash\)n"}, c);
+28 
+29     \textcolor{comment}{//それぞれの軸ラベルを付ける}
+30     fputs(\textcolor{stringliteral}{"set xlabel \(\backslash\)"X-axis\(\backslash\)"\(\backslash\)n"}, gnuplot);
+31     fputs(\textcolor{stringliteral}{"set ylabel \(\backslash\)"Y-axis\(\backslash\)"\(\backslash\)n"}, gnuplot);
+32     fputs(\textcolor{stringliteral}{"set zlabel \(\backslash\)"Z-axis\(\backslash\)"\(\backslash\)n"}, gnuplot);
+33 
+34     \textcolor{comment}{//クリックした3D座標と最小二乗法によって求めた平面をプロットする}
+35     fputs(\textcolor{stringliteral}{"splot \(\backslash\)"data/RealPoints.dat\(\backslash\)",a*x+b*y+c\(\backslash\)n"}, gnuplot);
+36 
+37     \textcolor{comment}{//デフォルトで表示された画像を保存する}
+38     fputs(\textcolor{stringliteral}{"set title \(\backslash\)"Default\(\backslash\)"\(\backslash\)n"}, gnuplot);
+39     fputs(\textcolor{stringliteral}{"set term jpeg\(\backslash\)n"}, gnuplot);
+40     fputs(\textcolor{stringliteral}{"set output \(\backslash\)"plot\_img/default.jpg\(\backslash\)"\(\backslash\)n"}, gnuplot);
+41     fputs(\textcolor{stringliteral}{"rep\(\backslash\)n"}, gnuplot);
+42 
+43     \textcolor{comment}{//X-Y平面でプロット.Z軸とZ軸のラベルを消す}
+44     fputs(\textcolor{stringliteral}{"unset zlabel\(\backslash\)n"}, gnuplot);
+45     fputs(\textcolor{stringliteral}{"unset ztics\(\backslash\)n"}, gnuplot);
+46     fputs(\textcolor{stringliteral}{"rep\(\backslash\)n"}, gnuplot);
+47 
+48     fputs(\textcolor{stringliteral}{"set view 0,0,1,1\(\backslash\)n"}, gnuplot);
+49     fputs(\textcolor{stringliteral}{"set title \(\backslash\)"X-Y Plane\(\backslash\)"\(\backslash\)n"}, gnuplot);
+50     fputs(\textcolor{stringliteral}{"set term jpeg\(\backslash\)n"}, gnuplot);
+51     fputs(\textcolor{stringliteral}{"set output \(\backslash\)"plot\_img/X-Y\_Plane.jpg\(\backslash\)"\(\backslash\)n"}, gnuplot);
+52     fputs(\textcolor{stringliteral}{"rep\(\backslash\)n"}, gnuplot);
+53 
+54     \textcolor{comment}{//X-Z平面でプロット.Z軸とZ軸のラベル表示し、Y軸とY軸のラベルを消す}
+55     fputs(\textcolor{stringliteral}{"set zlabel \(\backslash\)"Z-axis\(\backslash\)"\(\backslash\)n"}, gnuplot);
+56     fputs(\textcolor{stringliteral}{"set ztics\(\backslash\)n"}, gnuplot);
+57     fputs(\textcolor{stringliteral}{"unset ylabel\(\backslash\)n"}, gnuplot);
+58     fputs(\textcolor{stringliteral}{"unset ytics\(\backslash\)n"}, gnuplot);
+59     fputs(\textcolor{stringliteral}{"rep\(\backslash\)n"}, gnuplot);
+60 
+61     fputs(\textcolor{stringliteral}{"set view 90,0,1,1\(\backslash\)n"}, gnuplot);
+62     fputs(\textcolor{stringliteral}{"set title \(\backslash\)"X-Z Plane\(\backslash\)"\(\backslash\)n"}, gnuplot);
+63     fputs(\textcolor{stringliteral}{"set term jpeg\(\backslash\)n"}, gnuplot);
+64     fputs(\textcolor{stringliteral}{"set output \(\backslash\)"plot\_img/X-Z\_Plane.jpg\(\backslash\)"\(\backslash\)n"}, gnuplot);
+65     fputs(\textcolor{stringliteral}{"rep\(\backslash\)n"}, gnuplot);
+66 
+67     \textcolor{comment}{//X-Y平面でプロット.Y軸とY軸のラベルを表示し、X軸とX軸のラベルを消す}
+68     fputs(\textcolor{stringliteral}{"set ylabel \(\backslash\)"Y-axis\(\backslash\)"\(\backslash\)n"}, gnuplot);
+69     fputs(\textcolor{stringliteral}{"unset ytics\(\backslash\)n"}, gnuplot);
+70     fputs(\textcolor{stringliteral}{"unset xlabel\(\backslash\)n"}, gnuplot);
+71     fputs(\textcolor{stringliteral}{"unset xtics\(\backslash\)n"}, gnuplot);
+72     fputs(\textcolor{stringliteral}{"rep\(\backslash\)n"}, gnuplot);
+73 
+74     fputs(\textcolor{stringliteral}{"set view 0,0,1,1\(\backslash\)n"}, gnuplot);
+75     fputs(\textcolor{stringliteral}{"set title \(\backslash\)"Y-Z Plane\(\backslash\)"\(\backslash\)n"}, gnuplot);
+76     fputs(\textcolor{stringliteral}{"set term jpeg\(\backslash\)n"}, gnuplot);
+77     fputs(\textcolor{stringliteral}{"set output \(\backslash\)"plot\_img/Y-Z\_Plane.jpg\(\backslash\)"\(\backslash\)n"}, gnuplot);
+78     fputs(\textcolor{stringliteral}{"rep\(\backslash\)n"}, gnuplot);
+79 
+80     \textcolor{comment}{//ここまでの処理をgnuplotへ流し閉じる}
+81     fflush(gnuplot);
+82     \_pclose(gnuplot);
+83 \}\end{DoxyCode}
+
+
+このクラス詳解は次のファイルから抽出されました\-:\begin{DoxyCompactItemize}
+\item 
+{\bf Estimate\-Posture.\-h}\item 
+{\bf Plot\-Func.\-cpp}\end{DoxyCompactItemize}

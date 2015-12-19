@@ -1,0 +1,60 @@
+\section{Mouse.\-cpp ファイル}
+\label{_mouse_8cpp}\index{Mouse.\-cpp@{Mouse.\-cpp}}
+{\ttfamily \#include \char`\"{}Estimate\-Posture.\-h\char`\"{}}\\*
+\subsection*{関数}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf Mouse} (int event, int x, int y, int flags, void $\ast$param)
+\begin{DoxyCompactList}\small\item\em c\-Mouse\-::\-Mouse()関数.\-コンストラクタ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{関数詳解}
+\index{Mouse.\-cpp@{Mouse.\-cpp}!Mouse@{Mouse}}
+\index{Mouse@{Mouse}!Mouse.cpp@{Mouse.\-cpp}}
+\subsubsection[{Mouse}]{\setlength{\rightskip}{0pt plus 5cm}void Mouse (
+\begin{DoxyParamCaption}
+\item[{int}]{event, }
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{flags, }
+\item[{void $\ast$}]{param}
+\end{DoxyParamCaption}
+)}\label{_mouse_8cpp_ae9b5c7c5a2dab802fd95619ddaa08aa3}
+
+
+c\-Mouse\-::\-Mouse()関数.\-コンストラクタ 
+
+
+\begin{DoxyParams}{引数}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+ Mouse.\-cpp の 14 行目に定義があります。
+
+
+
+参照先 Coordinate\-Transform\-::ct2\-Dto3\-D(), M\-A\-X\-\_\-\-P\-O\-I\-N\-T\-S, points, pushpt.
+
+
+
+参照元 Kinect\-::run().
+
+
+\begin{DoxyCode}
+15 \{
+16     CoordinateTransform ct; \textcolor{comment}{//CoordinateTransformクラスのSインスタンスの生成}
+17 
+18     \textcolor{keywordtype}{int} check = 0; \textcolor{comment}{//距離データが0でないかチェックするフラグ.check == 0なら距離データが0以外を表す.}
+19 
+20     \textcolor{keywordflow}{if} (event == CV\_EVENT\_LBUTTONDOWN)\{
+21         \textcolor{keywordflow}{if} (points < MAX_POINTS)\{
+22             pushpt[points] = cv::Point(x, y);
+23             check = ct.ct2Dto3D(pushpt[points], points);
+24             \textcolor{keywordflow}{if} (check == 0)\{
+25                 points++;
+26             \}
+27         \}
+28     \}
+29 \}\end{DoxyCode}

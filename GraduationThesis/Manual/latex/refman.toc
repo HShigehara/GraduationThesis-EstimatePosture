@@ -1,0 +1,101 @@
+\contentsline {chapter}{\numberline {1}クラス索引}{1}
+\contentsline {section}{\numberline {1.1}クラス一覧}{1}
+\contentsline {chapter}{\numberline {2}ファイル索引}{3}
+\contentsline {section}{\numberline {2.1}ファイル一覧}{3}
+\contentsline {chapter}{\numberline {3}クラス詳解}{5}
+\contentsline {section}{\numberline {3.1}Coordinate\discretionary {-}{}{}Transform クラス}{5}
+\contentsline {subsection}{\numberline {3.1.1}詳解}{5}
+\contentsline {subsection}{\numberline {3.1.2}関数詳解}{5}
+\contentsline {subsubsection}{\numberline {3.1.2.1}ct2\discretionary {-}{}{}Dto3\discretionary {-}{}{}D}{5}
+\contentsline {section}{\numberline {3.2}Estimate\discretionary {-}{}{}Posture クラス}{6}
+\contentsline {subsection}{\numberline {3.2.1}詳解}{7}
+\contentsline {subsection}{\numberline {3.2.2}構築子と解体子}{7}
+\contentsline {subsubsection}{\numberline {3.2.2.1}Estimate\discretionary {-}{}{}Posture}{7}
+\contentsline {subsection}{\numberline {3.2.3}関数詳解}{7}
+\contentsline {subsubsection}{\numberline {3.2.3.1}Calc\discretionary {-}{}{}Yaw\discretionary {-}{}{}Roll\discretionary {-}{}{}Pitch}{7}
+\contentsline {subsubsection}{\numberline {3.2.3.2}Least\discretionary {-}{}{}Squre\discretionary {-}{}{}Method}{8}
+\contentsline {subsection}{\numberline {3.2.4}メンバ詳解}{9}
+\contentsline {subsubsection}{\numberline {3.2.4.1}a}{9}
+\contentsline {subsubsection}{\numberline {3.2.4.2}b}{9}
+\contentsline {subsubsection}{\numberline {3.2.4.3}c}{9}
+\contentsline {section}{\numberline {3.3}Kinect クラス}{9}
+\contentsline {subsection}{\numberline {3.3.1}詳解}{10}
+\contentsline {subsection}{\numberline {3.3.2}構築子と解体子}{10}
+\contentsline {subsubsection}{\numberline {3.3.2.1}$\sim $\discretionary {-}{}{}Kinect}{10}
+\contentsline {subsection}{\numberline {3.3.3}関数詳解}{10}
+\contentsline {subsubsection}{\numberline {3.3.3.1}draw\discretionary {-}{}{}Depth\discretionary {-}{}{}Image}{10}
+\contentsline {subsubsection}{\numberline {3.3.3.2}draw\discretionary {-}{}{}R\discretionary {-}{}{}G\discretionary {-}{}{}B\discretionary {-}{}{}Image}{11}
+\contentsline {subsubsection}{\numberline {3.3.3.3}Get\discretionary {-}{}{}Depth\discretionary {-}{}{}Data}{11}
+\contentsline {subsubsection}{\numberline {3.3.3.4}initialize}{12}
+\contentsline {subsubsection}{\numberline {3.3.3.5}run}{13}
+\contentsline {section}{\numberline {3.4}Plot クラス}{14}
+\contentsline {subsection}{\numberline {3.4.1}詳解}{14}
+\contentsline {subsection}{\numberline {3.4.2}関数詳解}{14}
+\contentsline {subsubsection}{\numberline {3.4.2.1}Plot\discretionary {-}{}{}Data}{14}
+\contentsline {chapter}{\numberline {4}ファイル詳解}{17}
+\contentsline {section}{\numberline {4.1}Coordinate\discretionary {-}{}{}Transform\discretionary {-}{}{}Func.\discretionary {-}{}{}cpp ファイル}{17}
+\contentsline {subsection}{\numberline {4.1.1}詳解}{17}
+\contentsline {section}{\numberline {4.2}Estimate\discretionary {-}{}{}Posture.\discretionary {-}{}{}h ファイル}{17}
+\contentsline {subsection}{\numberline {4.2.1}詳解}{19}
+\contentsline {subsection}{\numberline {4.2.2}マクロ定義詳解}{19}
+\contentsline {subsubsection}{\numberline {4.2.2.1}E\discretionary {-}{}{}R\discretionary {-}{}{}R\discretionary {-}{}{}O\discretionary {-}{}{}R\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}H\discretionary {-}{}{}E\discretionary {-}{}{}C\discretionary {-}{}{}K}{19}
+\contentsline {subsubsection}{\numberline {4.2.2.2}M\discretionary {-}{}{}A\discretionary {-}{}{}X\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}O\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}T\discretionary {-}{}{}S}{19}
+\contentsline {subsubsection}{\numberline {4.2.2.3}P\discretionary {-}{}{}I}{19}
+\contentsline {subsection}{\numberline {4.2.3}関数詳解}{20}
+\contentsline {subsubsection}{\numberline {4.2.3.1}Mouse}{20}
+\contentsline {subsection}{\numberline {4.2.4}変数詳解}{20}
+\contentsline {subsubsection}{\numberline {4.2.4.1}C\discretionary {-}{}{}A\discretionary {-}{}{}M\discretionary {-}{}{}E\discretionary {-}{}{}R\discretionary {-}{}{}A\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}S\discretionary {-}{}{}O\discretionary {-}{}{}L\discretionary {-}{}{}U\discretionary {-}{}{}T\discretionary {-}{}{}I\discretionary {-}{}{}O\discretionary {-}{}{}N}{20}
+\contentsline {subsubsection}{\numberline {4.2.4.2}cnt\discretionary {-}{}{}\_\discretionary {-}{}{}getcoordinate}{20}
+\contentsline {subsubsection}{\numberline {4.2.4.3}dist}{20}
+\contentsline {subsubsection}{\numberline {4.2.4.4}f1}{20}
+\contentsline {subsubsection}{\numberline {4.2.4.5}f2}{21}
+\contentsline {subsubsection}{\numberline {4.2.4.6}f3}{21}
+\contentsline {subsubsection}{\numberline {4.2.4.7}onedim}{21}
+\contentsline {subsubsection}{\numberline {4.2.4.8}points}{21}
+\contentsline {subsubsection}{\numberline {4.2.4.9}pt}{21}
+\contentsline {subsubsection}{\numberline {4.2.4.10}pushpt}{21}
+\contentsline {subsubsection}{\numberline {4.2.4.11}real\discretionary {-}{}{}\_\discretionary {-}{}{}x}{21}
+\contentsline {subsubsection}{\numberline {4.2.4.12}real\discretionary {-}{}{}\_\discretionary {-}{}{}y}{21}
+\contentsline {subsubsection}{\numberline {4.2.4.13}real\discretionary {-}{}{}\_\discretionary {-}{}{}z}{22}
+\contentsline {subsubsection}{\numberline {4.2.4.14}sumtime}{22}
+\contentsline {subsubsection}{\numberline {4.2.4.15}time1}{22}
+\contentsline {subsubsection}{\numberline {4.2.4.16}time1th}{22}
+\contentsline {subsubsection}{\numberline {4.2.4.17}time2}{22}
+\contentsline {subsubsection}{\numberline {4.2.4.18}time2th}{22}
+\contentsline {subsubsection}{\numberline {4.2.4.19}time3}{22}
+\contentsline {subsubsection}{\numberline {4.2.4.20}time3th}{22}
+\contentsline {section}{\numberline {4.3}Estimate\discretionary {-}{}{}Posture\discretionary {-}{}{}Func.\discretionary {-}{}{}cpp ファイル}{23}
+\contentsline {subsection}{\numberline {4.3.1}詳解}{23}
+\contentsline {section}{\numberline {4.4}Kinect\discretionary {-}{}{}Func.\discretionary {-}{}{}cpp ファイル}{23}
+\contentsline {subsection}{\numberline {4.4.1}詳解}{23}
+\contentsline {section}{\numberline {4.5}main.\discretionary {-}{}{}cpp ファイル}{23}
+\contentsline {subsection}{\numberline {4.5.1}詳解}{24}
+\contentsline {subsection}{\numberline {4.5.2}関数詳解}{25}
+\contentsline {subsubsection}{\numberline {4.5.2.1}main}{25}
+\contentsline {subsubsection}{\numberline {4.5.2.2}Mouse}{25}
+\contentsline {subsection}{\numberline {4.5.3}変数詳解}{25}
+\contentsline {subsubsection}{\numberline {4.5.3.1}cnt\discretionary {-}{}{}\_\discretionary {-}{}{}getcoordinate}{25}
+\contentsline {subsubsection}{\numberline {4.5.3.2}dist}{25}
+\contentsline {subsubsection}{\numberline {4.5.3.3}f1}{25}
+\contentsline {subsubsection}{\numberline {4.5.3.4}f2}{25}
+\contentsline {subsubsection}{\numberline {4.5.3.5}f3}{25}
+\contentsline {subsubsection}{\numberline {4.5.3.6}onedim}{26}
+\contentsline {subsubsection}{\numberline {4.5.3.7}points}{26}
+\contentsline {subsubsection}{\numberline {4.5.3.8}pt}{26}
+\contentsline {subsubsection}{\numberline {4.5.3.9}pushpt}{26}
+\contentsline {subsubsection}{\numberline {4.5.3.10}real\discretionary {-}{}{}\_\discretionary {-}{}{}x}{26}
+\contentsline {subsubsection}{\numberline {4.5.3.11}real\discretionary {-}{}{}\_\discretionary {-}{}{}y}{26}
+\contentsline {subsubsection}{\numberline {4.5.3.12}real\discretionary {-}{}{}\_\discretionary {-}{}{}z}{26}
+\contentsline {subsubsection}{\numberline {4.5.3.13}sumtime}{26}
+\contentsline {subsubsection}{\numberline {4.5.3.14}time1}{27}
+\contentsline {subsubsection}{\numberline {4.5.3.15}time1th}{27}
+\contentsline {subsubsection}{\numberline {4.5.3.16}time2}{27}
+\contentsline {subsubsection}{\numberline {4.5.3.17}time2th}{27}
+\contentsline {subsubsection}{\numberline {4.5.3.18}time3}{27}
+\contentsline {subsubsection}{\numberline {4.5.3.19}time3th}{27}
+\contentsline {section}{\numberline {4.6}Mouse.\discretionary {-}{}{}cpp ファイル}{27}
+\contentsline {subsection}{\numberline {4.6.1}関数詳解}{28}
+\contentsline {subsubsection}{\numberline {4.6.1.1}Mouse}{28}
+\contentsline {section}{\numberline {4.7}Plot\discretionary {-}{}{}Func.\discretionary {-}{}{}cpp ファイル}{29}
+\contentsline {subsection}{\numberline {4.7.1}詳解}{29}
+\contentsline {chapter}{索引}{30}

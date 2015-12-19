@@ -1,0 +1,255 @@
+\section{Estimate\-Posture クラス}
+\label{class_estimate_posture}\index{Estimate\-Posture@{Estimate\-Posture}}
+
+
+最小二乗法によって角度を計算するクラス  
+
+
+
+
+{\ttfamily \#include $<$Estimate\-Posture.\-h$>$}
+
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Estimate\-Posture} ()
+\begin{DoxyCompactList}\small\item\em Estimate\-Postureクラスのコンストラクタ \end{DoxyCompactList}\item 
+void {\bf Least\-Squre\-Method} (double {\bf real\-\_\-x}[{\bf M\-A\-X\-\_\-\-P\-O\-I\-N\-T\-S}-\/1], double {\bf real\-\_\-y}[{\bf M\-A\-X\-\_\-\-P\-O\-I\-N\-T\-S}-\/1], double {\bf real\-\_\-z}[{\bf M\-A\-X\-\_\-\-P\-O\-I\-N\-T\-S}-\/1])
+\begin{DoxyCompactList}\small\item\em 最小二乗法 \end{DoxyCompactList}\item 
+void {\bf Calc\-Yaw\-Roll\-Pitch} (double {\bf a}, double {\bf b}, double {\bf c})
+\begin{DoxyCompactList}\small\item\em 回転角度の計算 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+double {\bf a}
+\item 
+double {\bf b}
+\item 
+double {\bf c}
+\begin{DoxyCompactList}\small\item\em 最小二乗法で求めた平面の係数a,b,c \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{詳解}
+最小二乗法によって角度を計算するクラス 
+
+ Estimate\-Posture.\-h の 97 行目に定義があります。
+
+
+
+\subsection{構築子と解体子}
+\index{Estimate\-Posture@{Estimate\-Posture}!Estimate\-Posture@{Estimate\-Posture}}
+\index{Estimate\-Posture@{Estimate\-Posture}!EstimatePosture@{Estimate\-Posture}}
+\subsubsection[{Estimate\-Posture}]{\setlength{\rightskip}{0pt plus 5cm}Estimate\-Posture\-::\-Estimate\-Posture (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_estimate_posture_a6af7efdd6bfbef76347fd4d04e4dd752}
+
+
+Estimate\-Postureクラスのコンストラクタ 
+
+void \doxyref{Estimate\-Posture\-::\-Estimate\-Posture()}{p.}{class_estimate_posture_a6af7efdd6bfbef76347fd4d04e4dd752}.Estimate\-Postureクラスのコンストラクタ 
+
+ Estimate\-Posture\-Func.\-cpp の 13 行目に定義があります。
+
+
+
+参照先 a, b, c.
+
+
+\begin{DoxyCode}
+14 \{
+15     \textcolor{comment}{//最小二乗法に必要な要素の初期化}
+16     Szz = 0, Sxz = 0, Syz = 0, Sz = 0, Sxx = 0, Sxy = 0, Sx = 0, Syy = 0, Sy = 0;
+17 
+18     \textcolor{comment}{//最小二乗法によって求めた係数a,b,cの初期化}
+19     a = 0, b = 0, c = 0;
+20 \}
+\end{DoxyCode}
+
+
+\subsection{関数詳解}
+\index{Estimate\-Posture@{Estimate\-Posture}!Calc\-Yaw\-Roll\-Pitch@{Calc\-Yaw\-Roll\-Pitch}}
+\index{Calc\-Yaw\-Roll\-Pitch@{Calc\-Yaw\-Roll\-Pitch}!EstimatePosture@{Estimate\-Posture}}
+\subsubsection[{Calc\-Yaw\-Roll\-Pitch}]{\setlength{\rightskip}{0pt plus 5cm}void Estimate\-Posture\-::\-Calc\-Yaw\-Roll\-Pitch (
+\begin{DoxyParamCaption}
+\item[{double}]{a, }
+\item[{double}]{b, }
+\item[{double}]{c}
+\end{DoxyParamCaption}
+)}\label{class_estimate_posture_afc674ce35f70849abc50062ff5b4ce23}
+
+
+回転角度の計算 
+
+void \doxyref{Estimate\-Posture\-::\-Calc\-Yaw\-Roll\-Pitch()}{p.}{class_estimate_posture_afc674ce35f70849abc50062ff5b4ce23}関数.\-回転角度を計算する
+
+
+\begin{DoxyParams}{引数}
+{\em a} & 最小二乗法によって求めた平面の式a\-X+b\-Y+c=Zの係数 \\
+\hline
+{\em b} & 最小二乗法によって求めた平面の式a\-X+b\-Y+c=Zの係数 \\
+\hline
+{\em c} & 最小二乗法によって求めた平面の式a\-X+b\-Y+c=Zの係数 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+
+\end{DoxyReturn}
+
+
+ Estimate\-Posture\-Func.\-cpp の 76 行目に定義があります。
+
+
+
+参照先 P\-I.
+
+
+
+参照元 Least\-Squre\-Method().
+
+
+\begin{DoxyCode}
+77 \{
+78     \textcolor{keywordtype}{char} input = \textcolor{charliteral}{' '};
+79     
+80     yaw\_rad = -atan(a);
+81     yaw\_deg = yaw\_rad / PI*180.0;
+82 
+83     roll\_rad = atan2(-a, b);
+84     roll\_deg = roll\_rad / PI*180.0;
+85 
+86     pitch\_rad = atan2(1, b);
+87     pitch\_deg = pitch\_rad / PI*180.0;
+88 
+89     cout << \textcolor{stringliteral}{"\(\backslash\)n"};
+90     cout << \textcolor{stringliteral}{"====== 姿勢計測結果 ======"} << endl;
+91     cout << \textcolor{stringliteral}{"Yaw : "} << yaw\_deg << \textcolor{stringliteral}{"[deg]"} << endl;
+92     cout << \textcolor{stringliteral}{"Roll : "} << roll\_deg << \textcolor{stringliteral}{"[deg]"} << endl;
+93     cout << \textcolor{stringliteral}{"Pitch : "} << pitch\_deg << \textcolor{stringliteral}{"[deg]"} << endl;
+94     cout << \textcolor{stringliteral}{"=========================="} << \textcolor{stringliteral}{"\(\backslash\)n"} << endl;
+95 \}\end{DoxyCode}
+\index{Estimate\-Posture@{Estimate\-Posture}!Least\-Squre\-Method@{Least\-Squre\-Method}}
+\index{Least\-Squre\-Method@{Least\-Squre\-Method}!EstimatePosture@{Estimate\-Posture}}
+\subsubsection[{Least\-Squre\-Method}]{\setlength{\rightskip}{0pt plus 5cm}void Estimate\-Posture\-::\-Least\-Squre\-Method (
+\begin{DoxyParamCaption}
+\item[{double}]{real\-\_\-x[\-M\-A\-X\-\_\-\-P\-O\-I\-N\-T\-S-\/1], }
+\item[{double}]{real\-\_\-y[\-M\-A\-X\-\_\-\-P\-O\-I\-N\-T\-S-\/1], }
+\item[{double}]{real\-\_\-z[\-M\-A\-X\-\_\-\-P\-O\-I\-N\-T\-S-\/1]}
+\end{DoxyParamCaption}
+)}\label{class_estimate_posture_a2b7af30941dc6571e6f3ca0e3248faff}
+
+
+最小二乗法 
+
+void \doxyref{Estimate\-Posture\-::\-Least\-Squre\-Method()}{p.}{class_estimate_posture_a2b7af30941dc6571e6f3ca0e3248faff}関数.\-最小二乗法の要素を計算する
+
+
+\begin{DoxyParams}{引数}
+{\em pushpt} & \doxyref{Mouse()}{p.}{_estimate_posture_8h_ae9b5c7c5a2dab802fd95619ddaa08aa3}関数でクリックした静止画像の座標(x,y) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+0 or -\/1.\-0なら取得した店の距離データが0以外であったということ.-\/1なら取得した点の距離データが0であったということ.-\/1なら点を再取得する 
+\end{DoxyReturn}
+
+
+ Estimate\-Posture\-Func.\-cpp の 27 行目に定義があります。
+
+
+
+参照先 a, b, c, Calc\-Yaw\-Roll\-Pitch(), f3, M\-A\-X\-\_\-\-P\-O\-I\-N\-T\-S, Plot\-::\-Plot\-Data(), real\-\_\-x, real\-\_\-y, real\-\_\-z, time3, time3th.
+
+
+
+参照元 Coordinate\-Transform\-::ct2\-Dto3\-D().
+
+
+\begin{DoxyCode}
+28 \{
+29     Plot pl; \textcolor{comment}{//Plotクラスのインスタンスを生成}
+30 
+31     ofstream ofs(\textcolor{stringliteral}{"data/abc.dat"});
+32 
+33     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < MAX_POINTS; i++)\{
+34         Szz = Szz + real_z[i] * real_z[i];
+35         Sxz = Sxz + real_x[i] * real\_z[i];
+36         Syz = Syz + real_y[i] * real\_z[i];
+37         Sz = Sz + real\_z[i];
+38         Sxx = Sxx + real_x[i] * real_x[i];
+39         Sxy = Sxy + real\_x[i] * real_y[i];
+40         Sx = Sx + real\_x[i];
+41         Syy = Syy + real\_y[i] * real\_y[i];
+42         Sy = Sy + real\_y[i];
+43     \}
+44 
+45     m1 = (cv::Mat\_<double>(3, 3) << Sxx, Sxy, Sx, Sxy, Syy, Sy, Sx, Sy, MAX\_POINTS);
+46     m2 = (cv::Mat\_<double>(3, 1) << Sxz, Syz, Sz);
+47     A = m1.inv()*m2;
+48 
+49     a = A.at<\textcolor{keywordtype}{double}>(0, 0);
+50     b = A.at<\textcolor{keywordtype}{double}>(0, 1);
+51     c = A.at<\textcolor{keywordtype}{double}>(0, 2);
+52 
+53     ofs << \textcolor{stringliteral}{"a = "} << a << \textcolor{stringliteral}{"\(\backslash\)n"} << \textcolor{stringliteral}{"b = "} << b << \textcolor{stringliteral}{"\(\backslash\)n"} << \textcolor{stringliteral}{"c = "} << c << endl;
+54     
+55     f3 = 1000.0 / cv::getTickFrequency();
+56     time3 = cv::getTickCount();
+57     time3th = 0;
+58 
+59     pl.PlotData(a, b, c); \textcolor{comment}{//データをプロットする.必要ない場合はコメントアウトする}
+60 
+61     time3th = (cv::getTickCount() - time3)*f3;
+62 
+63     cout << \textcolor{stringliteral}{"\(\backslash\)n"};
+64     cout << \textcolor{stringliteral}{"gnuplotが作業を行っている時間"} << time3th << \textcolor{stringliteral}{"[ms]"} << endl;
+65 
+66     CalcYawRollPitch(a, b, c);
+67 \}
+\end{DoxyCode}
+
+
+\subsection{メンバ詳解}
+\index{Estimate\-Posture@{Estimate\-Posture}!a@{a}}
+\index{a@{a}!EstimatePosture@{Estimate\-Posture}}
+\subsubsection[{a}]{\setlength{\rightskip}{0pt plus 5cm}double Estimate\-Posture\-::a}\label{class_estimate_posture_abfd6911ec7854bba8ad222e2d89689bd}
+
+
+ Estimate\-Posture.\-h の 114 行目に定義があります。
+
+
+
+参照元 Estimate\-Posture(), Least\-Squre\-Method().
+
+\index{Estimate\-Posture@{Estimate\-Posture}!b@{b}}
+\index{b@{b}!EstimatePosture@{Estimate\-Posture}}
+\subsubsection[{b}]{\setlength{\rightskip}{0pt plus 5cm}double Estimate\-Posture\-::b}\label{class_estimate_posture_a7d55742e35f5f2ab3850861e44ffb5f7}
+
+
+ Estimate\-Posture.\-h の 114 行目に定義があります。
+
+
+
+参照元 Estimate\-Posture(), Least\-Squre\-Method().
+
+\index{Estimate\-Posture@{Estimate\-Posture}!c@{c}}
+\index{c@{c}!EstimatePosture@{Estimate\-Posture}}
+\subsubsection[{c}]{\setlength{\rightskip}{0pt plus 5cm}double Estimate\-Posture\-::c}\label{class_estimate_posture_a56c609379180a65d971531a1d6f657d3}
+
+
+最小二乗法で求めた平面の係数a,b,c 
+
+
+
+ Estimate\-Posture.\-h の 114 行目に定義があります。
+
+
+
+参照元 Estimate\-Posture(), Least\-Squre\-Method().
+
+
+
+このクラス詳解は次のファイルから抽出されました\-:\begin{DoxyCompactItemize}
+\item 
+{\bf Estimate\-Posture.\-h}\item 
+{\bf Estimate\-Posture\-Func.\-cpp}\end{DoxyCompactItemize}

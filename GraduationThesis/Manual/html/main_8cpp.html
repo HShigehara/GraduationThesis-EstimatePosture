@@ -1,0 +1,582 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>EstimatePosture: main.cpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">EstimatePosture
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('main_8cpp.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">関数</a> &#124;
+<a href="#var-members">変数</a>  </div>
+  <div class="headertitle">
+<div class="title">main.cpp ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>クラスを使う側のファイル  
+<a href="#details">[詳解]</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="_estimate_posture_8h_source.html">EstimatePosture.h</a>&quot;</code><br/>
+</div>
+<p><a href="main_8cpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a42bb1b3b1fcef46e7f9616ca10621c5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a42bb1b3b1fcef46e7f9616ca10621c5d">Mouse</a> ()</td></tr>
+<tr class="separator:a42bb1b3b1fcef46e7f9616ca10621c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:afcfa9131bcff2392e4916bec3f2c78d1"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afcfa9131bcff2392e4916bec3f2c78d1">dist</a> [307200]</td></tr>
+<tr class="memdesc:afcfa9131bcff2392e4916bec3f2c78d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">距離データを格納する配列  <a href="#afcfa9131bcff2392e4916bec3f2c78d1">[詳解]</a><br/></td></tr>
+<tr class="separator:afcfa9131bcff2392e4916bec3f2c78d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af77f32fe5be4d28ae0d320adde8f51af"><td class="memItemLeft" align="right" valign="top">cv::Point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af77f32fe5be4d28ae0d320adde8f51af">pushpt</a> [<a class="el" href="_estimate_posture_8h.html#a3b8cb7c2cda80c18f333c00601c6905b">MAX_POINTS</a>]</td></tr>
+<tr class="memdesc:af77f32fe5be4d28ae0d320adde8f51af"><td class="mdescLeft">&#160;</td><td class="mdescRight">取得した点の座標  <a href="#af77f32fe5be4d28ae0d320adde8f51af">[詳解]</a><br/></td></tr>
+<tr class="separator:af77f32fe5be4d28ae0d320adde8f51af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7f8f4a4e39e09fdb5e9f02330ecabef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af7f8f4a4e39e09fdb5e9f02330ecabef">points</a></td></tr>
+<tr class="memdesc:af7f8f4a4e39e09fdb5e9f02330ecabef"><td class="mdescLeft">&#160;</td><td class="mdescRight">取得した点の数  <a href="#af7f8f4a4e39e09fdb5e9f02330ecabef">[詳解]</a><br/></td></tr>
+<tr class="separator:af7f8f4a4e39e09fdb5e9f02330ecabef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac962128d9435beddc43ca532882deef2"><td class="memItemLeft" align="right" valign="top">cv::Point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac962128d9435beddc43ca532882deef2">pt</a> [<a class="el" href="_estimate_posture_8h.html#a3b8cb7c2cda80c18f333c00601c6905b">MAX_POINTS</a>]</td></tr>
+<tr class="memdesc:ac962128d9435beddc43ca532882deef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">取得した座標のコピー  <a href="#ac962128d9435beddc43ca532882deef2">[詳解]</a><br/></td></tr>
+<tr class="separator:ac962128d9435beddc43ca532882deef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf3df6233eba9ec5d58dc12a3db8551e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aaf3df6233eba9ec5d58dc12a3db8551e">cnt_getcoordinate</a></td></tr>
+<tr class="memdesc:aaf3df6233eba9ec5d58dc12a3db8551e"><td class="mdescLeft">&#160;</td><td class="mdescRight">座標を取得した回数をカウント  <a href="#aaf3df6233eba9ec5d58dc12a3db8551e">[詳解]</a><br/></td></tr>
+<tr class="separator:aaf3df6233eba9ec5d58dc12a3db8551e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3176345ea8c2caf35db75e45801d0f03"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3176345ea8c2caf35db75e45801d0f03">onedim</a> [<a class="el" href="_estimate_posture_8h.html#a3b8cb7c2cda80c18f333c00601c6905b">MAX_POINTS</a>]</td></tr>
+<tr class="memdesc:a3176345ea8c2caf35db75e45801d0f03"><td class="mdescLeft">&#160;</td><td class="mdescRight">それぞれの天を一次元に直す  <a href="#a3176345ea8c2caf35db75e45801d0f03">[詳解]</a><br/></td></tr>
+<tr class="separator:a3176345ea8c2caf35db75e45801d0f03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a44d2bc2273e220bc5ade2bc217d33a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3a44d2bc2273e220bc5ade2bc217d33a">real_x</a> [<a class="el" href="_estimate_posture_8h.html#a3b8cb7c2cda80c18f333c00601c6905b">MAX_POINTS</a>]</td></tr>
+<tr class="memdesc:a3a44d2bc2273e220bc5ade2bc217d33a"><td class="mdescLeft">&#160;</td><td class="mdescRight">3D空間座標のX  <a href="#a3a44d2bc2273e220bc5ade2bc217d33a">[詳解]</a><br/></td></tr>
+<tr class="separator:a3a44d2bc2273e220bc5ade2bc217d33a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac94948837fe999fddb50973fa27e450"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aac94948837fe999fddb50973fa27e450">real_y</a> [<a class="el" href="_estimate_posture_8h.html#a3b8cb7c2cda80c18f333c00601c6905b">MAX_POINTS</a>]</td></tr>
+<tr class="memdesc:aac94948837fe999fddb50973fa27e450"><td class="mdescLeft">&#160;</td><td class="mdescRight">3D空間座標のY  <a href="#aac94948837fe999fddb50973fa27e450">[詳解]</a><br/></td></tr>
+<tr class="separator:aac94948837fe999fddb50973fa27e450"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad04bdcf4918f232afcf6cccf8937f53b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad04bdcf4918f232afcf6cccf8937f53b">real_z</a> [<a class="el" href="_estimate_posture_8h.html#a3b8cb7c2cda80c18f333c00601c6905b">MAX_POINTS</a>]</td></tr>
+<tr class="memdesc:ad04bdcf4918f232afcf6cccf8937f53b"><td class="mdescLeft">&#160;</td><td class="mdescRight">3D空間座標のZ  <a href="#ad04bdcf4918f232afcf6cccf8937f53b">[詳解]</a><br/></td></tr>
+<tr class="separator:ad04bdcf4918f232afcf6cccf8937f53b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11d54e4d4a8a4dfc36e4b5c8576a6079"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a11d54e4d4a8a4dfc36e4b5c8576a6079">f1</a></td></tr>
+<tr class="separator:a11d54e4d4a8a4dfc36e4b5c8576a6079"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac287bf324063285e92e9f3b9dfb8f408"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac287bf324063285e92e9f3b9dfb8f408">f2</a></td></tr>
+<tr class="separator:ac287bf324063285e92e9f3b9dfb8f408"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d4774d4b1fa6156af69befbb5a9f079"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a1d4774d4b1fa6156af69befbb5a9f079">f3</a></td></tr>
+<tr class="separator:a1d4774d4b1fa6156af69befbb5a9f079"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3b1b3b3559ae28919ff50cb10b4b19d"><td class="memItemLeft" align="right" valign="top">int64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae3b1b3b3559ae28919ff50cb10b4b19d">time1</a></td></tr>
+<tr class="separator:ae3b1b3b3559ae28919ff50cb10b4b19d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac72f11471de429ffb48a21ee867e9c86"><td class="memItemLeft" align="right" valign="top">int64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac72f11471de429ffb48a21ee867e9c86">time2</a></td></tr>
+<tr class="separator:ac72f11471de429ffb48a21ee867e9c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dd5ee6f0df25198c4c8bd4d78c9f3a3"><td class="memItemLeft" align="right" valign="top">int64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0dd5ee6f0df25198c4c8bd4d78c9f3a3">time3</a></td></tr>
+<tr class="separator:a0dd5ee6f0df25198c4c8bd4d78c9f3a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7d664c3b63ac80cd47ebac01f9710b6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad7d664c3b63ac80cd47ebac01f9710b6">time1th</a></td></tr>
+<tr class="memdesc:ad7d664c3b63ac80cd47ebac01f9710b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">"p"キーを入力してから表示するまでの時間  <a href="#ad7d664c3b63ac80cd47ebac01f9710b6">[詳解]</a><br/></td></tr>
+<tr class="separator:ad7d664c3b63ac80cd47ebac01f9710b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a682544663e12eb18837015a32fa84c81"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a682544663e12eb18837015a32fa84c81">time2th</a></td></tr>
+<tr class="memdesc:a682544663e12eb18837015a32fa84c81"><td class="mdescLeft">&#160;</td><td class="mdescRight">9点目をクリックしてから回転角度を求めるまでの時間  <a href="#a682544663e12eb18837015a32fa84c81">[詳解]</a><br/></td></tr>
+<tr class="separator:a682544663e12eb18837015a32fa84c81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1040aab8fcdc8e241d94175099912c50"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a1040aab8fcdc8e241d94175099912c50">time3th</a></td></tr>
+<tr class="memdesc:a1040aab8fcdc8e241d94175099912c50"><td class="mdescLeft">&#160;</td><td class="mdescRight">gnuplotが作業を行っている時間  <a href="#a1040aab8fcdc8e241d94175099912c50">[詳解]</a><br/></td></tr>
+<tr class="separator:a1040aab8fcdc8e241d94175099912c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93d6409f5890605dbee315b522395064"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a93d6409f5890605dbee315b522395064">sumtime</a></td></tr>
+<tr class="memdesc:a93d6409f5890605dbee315b522395064"><td class="mdescLeft">&#160;</td><td class="mdescRight">処理にかかった時間の合計  <a href="#a93d6409f5890605dbee315b522395064">[詳解]</a><br/></td></tr>
+<tr class="separator:a93d6409f5890605dbee315b522395064"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>クラスを使う側のファイル </p>
+<dl class="section date"><dt>日付</dt><dd>2014/03/26 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>H.Shigehara </dd></dl>
+
+<p> <a class="el" href="main_8cpp_source.html">main.cpp</a> に定義があります。</p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00032">32</a> 行目に定義があります。</p>
+
+<p>参照先 <a class="el" href="_kinect_func_8cpp_source.html#l00052">Kinect::initialize()</a>, <a class="el" href="_kinect_func_8cpp_source.html#l00189">Kinect::run()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">try</span>{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="class_kinect.html">Kinect</a> kinect; <span class="comment">//Kinectクラスのインスタンスkinectを生成</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        kinect.<a class="code" href="class_kinect.html#a79f66d96dc810bf09a9d3cfe4f1f2671">initialize</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        _mkdir(<span class="stringliteral">&quot;data&quot;</span>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        _mkdir(<span class="stringliteral">&quot;plot_img&quot;</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        kinect.<a class="code" href="class_kinect.html#a0af275912326a92d03a9762a582965ea">run</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        exit(0);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">catch</span> (exception&amp; ex){</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        cout &lt;&lt; ex.what() &lt;&lt; endl;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}<div class="ttc" id="class_kinect_html_a79f66d96dc810bf09a9d3cfe4f1f2671"><div class="ttname"><a href="class_kinect.html#a79f66d96dc810bf09a9d3cfe4f1f2671">Kinect::initialize</a></div><div class="ttdeci">void initialize()</div><div class="ttdoc">Kinectの初期化 </div><div class="ttdef"><b>Definition:</b> <a href="_kinect_func_8cpp_source.html#l00052">KinectFunc.cpp:52</a></div></div>
+<div class="ttc" id="class_kinect_html_a0af275912326a92d03a9762a582965ea"><div class="ttname"><a href="class_kinect.html#a0af275912326a92d03a9762a582965ea">Kinect::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Kinectによる処理 </div><div class="ttdef"><b>Definition:</b> <a href="_kinect_func_8cpp_source.html#l00189">KinectFunc.cpp:189</a></div></div>
+<div class="ttc" id="class_kinect_html"><div class="ttname"><a href="class_kinect.html">Kinect</a></div><div class="ttdoc">Kinect操作 </div><div class="ttdef"><b>Definition:</b> <a href="_estimate_posture_8h_source.html#l00059">EstimatePosture.h:59</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a42bb1b3b1fcef46e7f9616ca10621c5d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mouse </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">変数詳解</h2>
+<a class="anchor" id="aaf3df6233eba9ec5d58dc12a3db8551e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cnt_getcoordinate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>座標を取得した回数をカウント </p>
+
+<p> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00017">17</a> 行目に定義があります。</p>
+
+<p>参照元 <a class="el" href="_coordinate_transform_func_8cpp_source.html#l00016">CoordinateTransform::ct2Dto3D()</a>, <a class="el" href="_kinect_func_8cpp_source.html#l00189">Kinect::run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afcfa9131bcff2392e4916bec3f2c78d1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short dist[307200]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>距離データを格納する配列 </p>
+
+<p> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00012">12</a> 行目に定義があります。</p>
+
+<p>参照元 <a class="el" href="_coordinate_transform_func_8cpp_source.html#l00016">CoordinateTransform::ct2Dto3D()</a>, <a class="el" href="_kinect_func_8cpp_source.html#l00139">Kinect::GetDepthData()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a11d54e4d4a8a4dfc36e4b5c8576a6079"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double f1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00023">23</a> 行目に定義があります。</p>
+
+<p>参照元 <a class="el" href="_kinect_func_8cpp_source.html#l00189">Kinect::run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac287bf324063285e92e9f3b9dfb8f408"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double f2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00023">23</a> 行目に定義があります。</p>
+
+<p>参照元 <a class="el" href="_coordinate_transform_func_8cpp_source.html#l00016">CoordinateTransform::ct2Dto3D()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1d4774d4b1fa6156af69befbb5a9f079"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double f3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00023">23</a> 行目に定義があります。</p>
+
+<p>参照元 <a class="el" href="_estimate_posture_func_8cpp_source.html#l00027">EstimatePosture::LeastSqureMethod()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3176345ea8c2caf35db75e45801d0f03"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int onedim[<a class="el" href="_estimate_posture_8h.html#a3b8cb7c2cda80c18f333c00601c6905b">MAX_POINTS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>それぞれの天を一次元に直す </p>
+
+<p> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00018">18</a> 行目に定義があります。</p>
+
+<p>参照元 <a class="el" href="_coordinate_transform_func_8cpp_source.html#l00016">CoordinateTransform::ct2Dto3D()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af7f8f4a4e39e09fdb5e9f02330ecabef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int points</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>取得した点の数 </p>
+
+<p> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00015">15</a> 行目に定義があります。</p>
+
+<p>参照元 <a class="el" href="_mouse_8cpp_source.html#l00014">Mouse()</a>, <a class="el" href="_kinect_func_8cpp_source.html#l00189">Kinect::run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac962128d9435beddc43ca532882deef2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Point pt[<a class="el" href="_estimate_posture_8h.html#a3b8cb7c2cda80c18f333c00601c6905b">MAX_POINTS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>取得した座標のコピー </p>
+
+<p> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00016">16</a> 行目に定義があります。</p>
+
+<p>参照元 <a class="el" href="_coordinate_transform_func_8cpp_source.html#l00016">CoordinateTransform::ct2Dto3D()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af77f32fe5be4d28ae0d320adde8f51af"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Point pushpt[<a class="el" href="_estimate_posture_8h.html#a3b8cb7c2cda80c18f333c00601c6905b">MAX_POINTS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>取得した点の座標 </p>
+
+<p> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00014">14</a> 行目に定義があります。</p>
+
+<p>参照元 <a class="el" href="_coordinate_transform_func_8cpp_source.html#l00016">CoordinateTransform::ct2Dto3D()</a>, <a class="el" href="_mouse_8cpp_source.html#l00014">Mouse()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3a44d2bc2273e220bc5ade2bc217d33a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double real_x[<a class="el" href="_estimate_posture_8h.html#a3b8cb7c2cda80c18f333c00601c6905b">MAX_POINTS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>3D空間座標のX </p>
+
+<p> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00019">19</a> 行目に定義があります。</p>
+
+<p>参照元 <a class="el" href="_coordinate_transform_func_8cpp_source.html#l00016">CoordinateTransform::ct2Dto3D()</a>, <a class="el" href="_estimate_posture_func_8cpp_source.html#l00027">EstimatePosture::LeastSqureMethod()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aac94948837fe999fddb50973fa27e450"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double real_y[<a class="el" href="_estimate_posture_8h.html#a3b8cb7c2cda80c18f333c00601c6905b">MAX_POINTS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>3D空間座標のY </p>
+
+<p> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00020">20</a> 行目に定義があります。</p>
+
+<p>参照元 <a class="el" href="_coordinate_transform_func_8cpp_source.html#l00016">CoordinateTransform::ct2Dto3D()</a>, <a class="el" href="_estimate_posture_func_8cpp_source.html#l00027">EstimatePosture::LeastSqureMethod()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad04bdcf4918f232afcf6cccf8937f53b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double real_z[<a class="el" href="_estimate_posture_8h.html#a3b8cb7c2cda80c18f333c00601c6905b">MAX_POINTS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>3D空間座標のZ </p>
+
+<p> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00021">21</a> 行目に定義があります。</p>
+
+<p>参照元 <a class="el" href="_coordinate_transform_func_8cpp_source.html#l00016">CoordinateTransform::ct2Dto3D()</a>, <a class="el" href="_estimate_posture_func_8cpp_source.html#l00027">EstimatePosture::LeastSqureMethod()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a93d6409f5890605dbee315b522395064"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double sumtime</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>処理にかかった時間の合計 </p>
+
+<p> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00028">28</a> 行目に定義があります。</p>
+
+<p>参照元 <a class="el" href="_coordinate_transform_func_8cpp_source.html#l00016">CoordinateTransform::ct2Dto3D()</a>, <a class="el" href="_kinect_func_8cpp_source.html#l00189">Kinect::run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae3b1b3b3559ae28919ff50cb10b4b19d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64 time1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00024">24</a> 行目に定義があります。</p>
+
+<p>参照元 <a class="el" href="_kinect_func_8cpp_source.html#l00189">Kinect::run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad7d664c3b63ac80cd47ebac01f9710b6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double time1th</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>"p"キーを入力してから表示するまでの時間 </p>
+
+<p> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00025">25</a> 行目に定義があります。</p>
+
+<p>参照元 <a class="el" href="_coordinate_transform_func_8cpp_source.html#l00016">CoordinateTransform::ct2Dto3D()</a>, <a class="el" href="_kinect_func_8cpp_source.html#l00189">Kinect::run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac72f11471de429ffb48a21ee867e9c86"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64 time2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00024">24</a> 行目に定義があります。</p>
+
+<p>参照元 <a class="el" href="_coordinate_transform_func_8cpp_source.html#l00016">CoordinateTransform::ct2Dto3D()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a682544663e12eb18837015a32fa84c81"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double time2th</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>9点目をクリックしてから回転角度を求めるまでの時間 </p>
+
+<p> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00026">26</a> 行目に定義があります。</p>
+
+<p>参照元 <a class="el" href="_coordinate_transform_func_8cpp_source.html#l00016">CoordinateTransform::ct2Dto3D()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0dd5ee6f0df25198c4c8bd4d78c9f3a3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64 time3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00024">24</a> 行目に定義があります。</p>
+
+<p>参照元 <a class="el" href="_estimate_posture_func_8cpp_source.html#l00027">EstimatePosture::LeastSqureMethod()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1040aab8fcdc8e241d94175099912c50"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double time3th</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>gnuplotが作業を行っている時間 </p>
+
+<p> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00027">27</a> 行目に定義があります。</p>
+
+<p>参照元 <a class="el" href="_coordinate_transform_func_8cpp_source.html#l00016">CoordinateTransform::ct2Dto3D()</a>, <a class="el" href="_estimate_posture_func_8cpp_source.html#l00027">EstimatePosture::LeastSqureMethod()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_45aeffd6702719c5f3cbf0d005461816.html">SkyDrive</a></li><li class="navelem"><a class="el" href="dir_a0d9d77de56eed61b71feb2adefbb47d.html">ShigeLab</a></li><li class="navelem"><a class="el" href="dir_89d32e4e26b9b93c85c915e3b07e88b7.html">Programming</a></li><li class="navelem"><a class="el" href="dir_f222f4b39d8b1349931d836df5dbea5a.html">Master</a></li><li class="navelem"><a class="el" href="dir_8a88acfa4170d9a359748aee931fa59d.html">GraduationThesis</a></li><li class="navelem"><a class="el" href="dir_71aff1b741e829ed185286e598576fcf.html">GraduationThesis</a></li><li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
+    <li class="footer">2015年12月19日(土) 20時04分43秒作成 - EstimatePosture / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>EstimatePosture: main.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">EstimatePosture
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('main_8cpp_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">main.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="main_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="_estimate_posture_8h.html">EstimatePosture.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/* グローバル変数 */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/* 距離データ */</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="main_8cpp.html#afcfa9131bcff2392e4916bec3f2c78d1">   12</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="main_8cpp.html#afcfa9131bcff2392e4916bec3f2c78d1">dist</a>[307200]; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/* マウス操作関連 */</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="main_8cpp.html#af77f32fe5be4d28ae0d320adde8f51af">   14</a></span>&#160;cv::Point <a class="code" href="main_8cpp.html#af77f32fe5be4d28ae0d320adde8f51af">pushpt</a>[<a class="code" href="_estimate_posture_8h.html#a3b8cb7c2cda80c18f333c00601c6905b">MAX_POINTS</a>]; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="main_8cpp.html#af7f8f4a4e39e09fdb5e9f02330ecabef">   15</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#af7f8f4a4e39e09fdb5e9f02330ecabef">points</a>; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="main_8cpp.html#ac962128d9435beddc43ca532882deef2">   16</a></span>&#160;cv::Point <a class="code" href="main_8cpp.html#ac962128d9435beddc43ca532882deef2">pt</a>[<a class="code" href="_estimate_posture_8h.html#a3b8cb7c2cda80c18f333c00601c6905b">MAX_POINTS</a>]; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="main_8cpp.html#aaf3df6233eba9ec5d58dc12a3db8551e">   17</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#aaf3df6233eba9ec5d58dc12a3db8551e">cnt_getcoordinate</a>; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="main_8cpp.html#a3176345ea8c2caf35db75e45801d0f03">   18</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#a3176345ea8c2caf35db75e45801d0f03">onedim</a>[<a class="code" href="_estimate_posture_8h.html#a3b8cb7c2cda80c18f333c00601c6905b">MAX_POINTS</a>]; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="main_8cpp.html#a3a44d2bc2273e220bc5ade2bc217d33a">   19</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="main_8cpp.html#a3a44d2bc2273e220bc5ade2bc217d33a">real_x</a>[<a class="code" href="_estimate_posture_8h.html#a3b8cb7c2cda80c18f333c00601c6905b">MAX_POINTS</a>]; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="main_8cpp.html#aac94948837fe999fddb50973fa27e450">   20</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="main_8cpp.html#aac94948837fe999fddb50973fa27e450">real_y</a>[<a class="code" href="_estimate_posture_8h.html#a3b8cb7c2cda80c18f333c00601c6905b">MAX_POINTS</a>]; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="main_8cpp.html#ad04bdcf4918f232afcf6cccf8937f53b">   21</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="main_8cpp.html#ad04bdcf4918f232afcf6cccf8937f53b">real_z</a>[<a class="code" href="_estimate_posture_8h.html#a3b8cb7c2cda80c18f333c00601c6905b">MAX_POINTS</a>]; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="main_8cpp.html#a1d4774d4b1fa6156af69befbb5a9f079">   23</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="main_8cpp.html#a11d54e4d4a8a4dfc36e4b5c8576a6079">f1</a>, <a class="code" href="main_8cpp.html#ac287bf324063285e92e9f3b9dfb8f408">f2</a>, <a class="code" href="main_8cpp.html#a1d4774d4b1fa6156af69befbb5a9f079">f3</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="main_8cpp.html#a0dd5ee6f0df25198c4c8bd4d78c9f3a3">   24</a></span>&#160;int64 <a class="code" href="main_8cpp.html#ae3b1b3b3559ae28919ff50cb10b4b19d">time1</a>, <a class="code" href="main_8cpp.html#ac72f11471de429ffb48a21ee867e9c86">time2</a>, <a class="code" href="main_8cpp.html#a0dd5ee6f0df25198c4c8bd4d78c9f3a3">time3</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="main_8cpp.html#ad7d664c3b63ac80cd47ebac01f9710b6">   25</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="main_8cpp.html#ad7d664c3b63ac80cd47ebac01f9710b6">time1th</a>; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="main_8cpp.html#a682544663e12eb18837015a32fa84c81">   26</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="main_8cpp.html#a682544663e12eb18837015a32fa84c81">time2th</a>; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="main_8cpp.html#a1040aab8fcdc8e241d94175099912c50">   27</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="main_8cpp.html#a1040aab8fcdc8e241d94175099912c50">time3th</a>; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="main_8cpp.html#a93d6409f5890605dbee315b522395064">   28</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="main_8cpp.html#a93d6409f5890605dbee315b522395064">sumtime</a>; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8cpp.html#a42bb1b3b1fcef46e7f9616ca10621c5d">Mouse</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   32</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">try</span>{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="class_kinect.html">Kinect</a> kinect; <span class="comment">//Kinectクラスのインスタンスkinectを生成</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        kinect.<a class="code" href="class_kinect.html#a79f66d96dc810bf09a9d3cfe4f1f2671">initialize</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        _mkdir(<span class="stringliteral">&quot;data&quot;</span>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        _mkdir(<span class="stringliteral">&quot;plot_img&quot;</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        kinect.<a class="code" href="class_kinect.html#a0af275912326a92d03a9762a582965ea">run</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        exit(0);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">catch</span> (exception&amp; ex){</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        cout &lt;&lt; ex.what() &lt;&lt; endl;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="ttc" id="main_8cpp_html_a3176345ea8c2caf35db75e45801d0f03"><div class="ttname"><a href="main_8cpp.html#a3176345ea8c2caf35db75e45801d0f03">onedim</a></div><div class="ttdeci">int onedim[MAX_POINTS]</div><div class="ttdoc">それぞれの天を一次元に直す </div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00018">main.cpp:18</a></div></div>
+<div class="ttc" id="main_8cpp_html_ad04bdcf4918f232afcf6cccf8937f53b"><div class="ttname"><a href="main_8cpp.html#ad04bdcf4918f232afcf6cccf8937f53b">real_z</a></div><div class="ttdeci">double real_z[MAX_POINTS]</div><div class="ttdoc">3D空間座標のZ </div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00021">main.cpp:21</a></div></div>
+<div class="ttc" id="_estimate_posture_8h_html_a3b8cb7c2cda80c18f333c00601c6905b"><div class="ttname"><a href="_estimate_posture_8h.html#a3b8cb7c2cda80c18f333c00601c6905b">MAX_POINTS</a></div><div class="ttdeci">#define MAX_POINTS</div><div class="ttdoc">マウスクリック時に取得する点の数 </div><div class="ttdef"><b>Definition:</b> <a href="_estimate_posture_8h_source.html#l00029">EstimatePosture.h:29</a></div></div>
+<div class="ttc" id="main_8cpp_html_ae3b1b3b3559ae28919ff50cb10b4b19d"><div class="ttname"><a href="main_8cpp.html#ae3b1b3b3559ae28919ff50cb10b4b19d">time1</a></div><div class="ttdeci">int64 time1</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00024">main.cpp:24</a></div></div>
+<div class="ttc" id="main_8cpp_html_af77f32fe5be4d28ae0d320adde8f51af"><div class="ttname"><a href="main_8cpp.html#af77f32fe5be4d28ae0d320adde8f51af">pushpt</a></div><div class="ttdeci">cv::Point pushpt[MAX_POINTS]</div><div class="ttdoc">取得した点の座標 </div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00014">main.cpp:14</a></div></div>
+<div class="ttc" id="class_kinect_html_a79f66d96dc810bf09a9d3cfe4f1f2671"><div class="ttname"><a href="class_kinect.html#a79f66d96dc810bf09a9d3cfe4f1f2671">Kinect::initialize</a></div><div class="ttdeci">void initialize()</div><div class="ttdoc">Kinectの初期化 </div><div class="ttdef"><b>Definition:</b> <a href="_kinect_func_8cpp_source.html#l00052">KinectFunc.cpp:52</a></div></div>
+<div class="ttc" id="class_kinect_html_a0af275912326a92d03a9762a582965ea"><div class="ttname"><a href="class_kinect.html#a0af275912326a92d03a9762a582965ea">Kinect::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Kinectによる処理 </div><div class="ttdef"><b>Definition:</b> <a href="_kinect_func_8cpp_source.html#l00189">KinectFunc.cpp:189</a></div></div>
+<div class="ttc" id="main_8cpp_html_a0dd5ee6f0df25198c4c8bd4d78c9f3a3"><div class="ttname"><a href="main_8cpp.html#a0dd5ee6f0df25198c4c8bd4d78c9f3a3">time3</a></div><div class="ttdeci">int64 time3</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00024">main.cpp:24</a></div></div>
+<div class="ttc" id="main_8cpp_html_ad7d664c3b63ac80cd47ebac01f9710b6"><div class="ttname"><a href="main_8cpp.html#ad7d664c3b63ac80cd47ebac01f9710b6">time1th</a></div><div class="ttdeci">double time1th</div><div class="ttdoc">&quot;p&quot;キーを入力してから表示するまでの時間 </div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00025">main.cpp:25</a></div></div>
+<div class="ttc" id="main_8cpp_html_ac287bf324063285e92e9f3b9dfb8f408"><div class="ttname"><a href="main_8cpp.html#ac287bf324063285e92e9f3b9dfb8f408">f2</a></div><div class="ttdeci">double f2</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00023">main.cpp:23</a></div></div>
+<div class="ttc" id="_estimate_posture_8h_html"><div class="ttname"><a href="_estimate_posture_8h.html">EstimatePosture.h</a></div><div class="ttdoc">プロジェクトのヘッダファイル </div></div>
+<div class="ttc" id="main_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00032">main.cpp:32</a></div></div>
+<div class="ttc" id="main_8cpp_html_afcfa9131bcff2392e4916bec3f2c78d1"><div class="ttname"><a href="main_8cpp.html#afcfa9131bcff2392e4916bec3f2c78d1">dist</a></div><div class="ttdeci">unsigned short dist[307200]</div><div class="ttdoc">距離データを格納する配列 </div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00012">main.cpp:12</a></div></div>
+<div class="ttc" id="main_8cpp_html_ac962128d9435beddc43ca532882deef2"><div class="ttname"><a href="main_8cpp.html#ac962128d9435beddc43ca532882deef2">pt</a></div><div class="ttdeci">cv::Point pt[MAX_POINTS]</div><div class="ttdoc">取得した座標のコピー </div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00016">main.cpp:16</a></div></div>
+<div class="ttc" id="main_8cpp_html_aac94948837fe999fddb50973fa27e450"><div class="ttname"><a href="main_8cpp.html#aac94948837fe999fddb50973fa27e450">real_y</a></div><div class="ttdeci">double real_y[MAX_POINTS]</div><div class="ttdoc">3D空間座標のY </div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00020">main.cpp:20</a></div></div>
+<div class="ttc" id="main_8cpp_html_a1040aab8fcdc8e241d94175099912c50"><div class="ttname"><a href="main_8cpp.html#a1040aab8fcdc8e241d94175099912c50">time3th</a></div><div class="ttdeci">double time3th</div><div class="ttdoc">gnuplotが作業を行っている時間 </div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00027">main.cpp:27</a></div></div>
+<div class="ttc" id="main_8cpp_html_a682544663e12eb18837015a32fa84c81"><div class="ttname"><a href="main_8cpp.html#a682544663e12eb18837015a32fa84c81">time2th</a></div><div class="ttdeci">double time2th</div><div class="ttdoc">9点目をクリックしてから回転角度を求めるまでの時間 </div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00026">main.cpp:26</a></div></div>
+<div class="ttc" id="main_8cpp_html_ac72f11471de429ffb48a21ee867e9c86"><div class="ttname"><a href="main_8cpp.html#ac72f11471de429ffb48a21ee867e9c86">time2</a></div><div class="ttdeci">int64 time2</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00024">main.cpp:24</a></div></div>
+<div class="ttc" id="main_8cpp_html_af7f8f4a4e39e09fdb5e9f02330ecabef"><div class="ttname"><a href="main_8cpp.html#af7f8f4a4e39e09fdb5e9f02330ecabef">points</a></div><div class="ttdeci">int points</div><div class="ttdoc">取得した点の数 </div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00015">main.cpp:15</a></div></div>
+<div class="ttc" id="main_8cpp_html_a11d54e4d4a8a4dfc36e4b5c8576a6079"><div class="ttname"><a href="main_8cpp.html#a11d54e4d4a8a4dfc36e4b5c8576a6079">f1</a></div><div class="ttdeci">double f1</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00023">main.cpp:23</a></div></div>
+<div class="ttc" id="main_8cpp_html_a42bb1b3b1fcef46e7f9616ca10621c5d"><div class="ttname"><a href="main_8cpp.html#a42bb1b3b1fcef46e7f9616ca10621c5d">Mouse</a></div><div class="ttdeci">void Mouse()</div></div>
+<div class="ttc" id="main_8cpp_html_a1d4774d4b1fa6156af69befbb5a9f079"><div class="ttname"><a href="main_8cpp.html#a1d4774d4b1fa6156af69befbb5a9f079">f3</a></div><div class="ttdeci">double f3</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00023">main.cpp:23</a></div></div>
+<div class="ttc" id="main_8cpp_html_a3a44d2bc2273e220bc5ade2bc217d33a"><div class="ttname"><a href="main_8cpp.html#a3a44d2bc2273e220bc5ade2bc217d33a">real_x</a></div><div class="ttdeci">double real_x[MAX_POINTS]</div><div class="ttdoc">3D空間座標のX </div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00019">main.cpp:19</a></div></div>
+<div class="ttc" id="main_8cpp_html_a93d6409f5890605dbee315b522395064"><div class="ttname"><a href="main_8cpp.html#a93d6409f5890605dbee315b522395064">sumtime</a></div><div class="ttdeci">double sumtime</div><div class="ttdoc">処理にかかった時間の合計 </div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00028">main.cpp:28</a></div></div>
+<div class="ttc" id="main_8cpp_html_aaf3df6233eba9ec5d58dc12a3db8551e"><div class="ttname"><a href="main_8cpp.html#aaf3df6233eba9ec5d58dc12a3db8551e">cnt_getcoordinate</a></div><div class="ttdeci">int cnt_getcoordinate</div><div class="ttdoc">座標を取得した回数をカウント </div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00017">main.cpp:17</a></div></div>
+<div class="ttc" id="class_kinect_html"><div class="ttname"><a href="class_kinect.html">Kinect</a></div><div class="ttdoc">Kinect操作 </div><div class="ttdef"><b>Definition:</b> <a href="_estimate_posture_8h_source.html#l00059">EstimatePosture.h:59</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_45aeffd6702719c5f3cbf0d005461816.html">SkyDrive</a></li><li class="navelem"><a class="el" href="dir_a0d9d77de56eed61b71feb2adefbb47d.html">ShigeLab</a></li><li class="navelem"><a class="el" href="dir_89d32e4e26b9b93c85c915e3b07e88b7.html">Programming</a></li><li class="navelem"><a class="el" href="dir_f222f4b39d8b1349931d836df5dbea5a.html">Master</a></li><li class="navelem"><a class="el" href="dir_8a88acfa4170d9a359748aee931fa59d.html">GraduationThesis</a></li><li class="navelem"><a class="el" href="dir_71aff1b741e829ed185286e598576fcf.html">GraduationThesis</a></li><li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
+    <li class="footer">2015年12月19日(土) 20時04分43秒作成 - EstimatePosture / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

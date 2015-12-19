@@ -1,0 +1,133 @@
+\section{Coordinate\-Transform クラス}
+\label{class_coordinate_transform}\index{Coordinate\-Transform@{Coordinate\-Transform}}
+
+
+2\-D→3\-Dへの座標変換  
+
+
+
+
+{\ttfamily \#include $<$Estimate\-Posture.\-h$>$}
+
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf ct2\-Dto3\-D} (cv\-::\-Point {\bf pushpt}, int {\bf points})
+\begin{DoxyCompactList}\small\item\em 3\-D空間座標へ変換 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{詳解}
+2\-D→3\-Dへの座標変換 
+
+ Estimate\-Posture.\-h の 84 行目に定義があります。
+
+
+
+\subsection{関数詳解}
+\index{Coordinate\-Transform@{Coordinate\-Transform}!ct2\-Dto3\-D@{ct2\-Dto3\-D}}
+\index{ct2\-Dto3\-D@{ct2\-Dto3\-D}!CoordinateTransform@{Coordinate\-Transform}}
+\subsubsection[{ct2\-Dto3\-D}]{\setlength{\rightskip}{0pt plus 5cm}int Coordinate\-Transform\-::ct2\-Dto3\-D (
+\begin{DoxyParamCaption}
+\item[{cv\-::\-Point}]{pushpt, }
+\item[{int}]{points}
+\end{DoxyParamCaption}
+)}\label{class_coordinate_transform_ade9fc9b97494cbd507364176871b68b1}
+
+
+3\-D空間座標へ変換 
+
+int Coordinate\-Transform\-::ct2dto3d()関数.2\-Dの座標データを距離データと合わせて3\-Dデータに変換する
+
+
+\begin{DoxyParams}{引数}
+{\em pushpt} & \doxyref{Mouse()}{p.}{_estimate_posture_8h_ae9b5c7c5a2dab802fd95619ddaa08aa3}関数でクリックした静止画像の座標(x,y) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+0 or -\/1.\-0なら取得した店の距離データが0以外であったということ.-\/1なら取得した点の距離データが0であったということ.-\/1なら点を再取得する 
+\end{DoxyReturn}
+
+
+ Coordinate\-Transform\-Func.\-cpp の 16 行目に定義があります。
+
+
+
+参照先 cnt\-\_\-getcoordinate, dist, f2, Estimate\-Posture\-::\-Least\-Squre\-Method(), M\-A\-X\-\_\-\-P\-O\-I\-N\-T\-S, onedim, pt, pushpt, real\-\_\-x, real\-\_\-y, real\-\_\-z, sumtime, time1th, time2, time2th, time3th (計16項目).
+
+
+
+参照元 Mouse().
+
+
+\begin{DoxyCode}
+17 \{
+18     EstimatePosture ep; \textcolor{comment}{//インスタンス生成}
+19 
+20     ofstream ofs(\textcolor{stringliteral}{"data/RealPoints.dat"}); \textcolor{comment}{//3次元座標に変換した時の(x,y,z)}
+21 
+22     pt[cnt_getcoordinate] = pushpt; \textcolor{comment}{//クリック時に取得した点の座標をコピーする}
+23 
+24     onedim[cnt_getcoordinate] = pt[cnt_getcoordinate].x + 640 * pt[
+      cnt_getcoordinate].y - 640; \textcolor{comment}{//2次元で表されている点を1次元に変換する}
+25     cout << \textcolor{stringliteral}{"pt["} << cnt_getcoordinate << \textcolor{stringliteral}{"] => "} << pt[cnt_getcoordinate] << \textcolor{stringliteral}{" , onedim => "} << 
+      onedim[cnt_getcoordinate] << \textcolor{stringliteral}{" , dist["} << onedim[cnt_getcoordinate] - 1 << \textcolor{stringliteral}{"] => "} << 
+      dist[onedim[cnt_getcoordinate]] << endl;
+26 
+27     \textcolor{comment}{//距離データが0だった場合座標取得をやり直す}
+28     \textcolor{keywordflow}{if} (dist[onedim[cnt_getcoordinate]] == 0)\{
+29         cout << \textcolor{stringliteral}{"距離データが0だったのでもう一度周辺をクリックしてください"} << endl;
+30         \textcolor{keywordflow}{return} -1;
+31     \}
+32 
+33     WorldCoordinate = NuiTransformDepthImageToSkeleton((\textcolor{keywordtype}{long})pt[
+      cnt_getcoordinate].x, (\textcolor{keywordtype}{long})pt[cnt_getcoordinate].y, dist[onedim[
+      cnt_getcoordinate]] << 3, NUI\_IMAGE\_RESOLUTION\_640x480);
+34 
+35     real_x[cnt_getcoordinate] = WorldCoordinate.x*1000.0;
+36     real_y[cnt_getcoordinate] = WorldCoordinate.y*1000.0;
+37     real_z[cnt_getcoordinate] = WorldCoordinate.z*1000.0;
+38 
+39     cout << \textcolor{stringliteral}{"real\_x["} << cnt_getcoordinate << \textcolor{stringliteral}{"] => "} << real_x[
+      cnt_getcoordinate] << \textcolor{stringliteral}{"[mm] real\_y["} << cnt_getcoordinate << \textcolor{stringliteral}{"] => "} << real_y[
+      cnt_getcoordinate] << \textcolor{stringliteral}{"[mm] real\_z["} << cnt_getcoordinate << \textcolor{stringliteral}{"] => "} << real_z[
+      cnt_getcoordinate] << \textcolor{stringliteral}{"[mm]"} << endl;
+40     cout << \textcolor{stringliteral}{"=========================================================================="} << endl;
+41 
+42     \textcolor{comment}{//0~8までの点が揃ったらそれぞれの3次元座標をファイルへ出力し最小二乗法を行う}
+43     \textcolor{keywordflow}{if} (points == MAX_POINTS - 1)\{
+44         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < MAX_POINTS; i++)\{
+45             ofs << real_x[i] << \textcolor{stringliteral}{" "} << real_y[i] << \textcolor{stringliteral}{" "} << real_z[i] << endl;
+46         \}
+47         \textcolor{comment}{//処理時間を計測する}
+48         f2 = 1000.0 / cv::getTickFrequency();
+49         time2 = cv::getTickCount();
+50         time2th = 0;
+51 
+52         ep.LeastSqureMethod(real_x, real_y, real_z); \textcolor{comment}{//最小二乗法の要素計算}
+53 
+54         time2th = (cv::getTickCount() - time2)*f2;
+55 
+56         cout << MAX\_POINTS << \textcolor{stringliteral}{"点目をクリックしてから回転角度を求めるまでの時間"} << time2th << \textcolor{stringliteral}{"[ms]"} << endl;
+57 
+58         sumtime = time1th + time2th - time3th;
+59 
+60         cout << \textcolor{stringliteral}{"処理にかかった時間(gnuplotの処理時間を除く)は"} << sumtime << \textcolor{stringliteral}{"[ms] でした"} << \textcolor{stringliteral}{"\(\backslash\)n"} << endl;
+61 
+62         cout << \textcolor{stringliteral}{"============== メニュー =============="} << endl;
+63         cout << \textcolor{stringliteral}{"もう一度計測しますか??"} << endl;
+64         cout << \textcolor{stringliteral}{"画像上でキーを入力してください"} << endl;
+65         cout << \textcolor{stringliteral}{"1 : Yes"} << endl;
+66         cout << \textcolor{stringliteral}{"2 : No"} << endl;
+67         cout << \textcolor{stringliteral}{"======================================"} << \textcolor{stringliteral}{"\(\backslash\)n"} << endl;
+68     \}
+69 
+70     cnt_getcoordinate++; \textcolor{comment}{//取得した点の数が9つになるまで座標を取得し続ける}
+71 
+72     \textcolor{keywordflow}{return} 0;
+73 \}\end{DoxyCode}
+
+
+このクラス詳解は次のファイルから抽出されました\-:\begin{DoxyCompactItemize}
+\item 
+{\bf Estimate\-Posture.\-h}\item 
+{\bf Coordinate\-Transform\-Func.\-cpp}\end{DoxyCompactItemize}

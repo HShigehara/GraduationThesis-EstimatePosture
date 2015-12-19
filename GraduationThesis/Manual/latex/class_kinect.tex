@@ -1,0 +1,419 @@
+\section{Kinect クラス}
+\label{class_kinect}\index{Kinect@{Kinect}}
+
+
+Kinect操作  
+
+
+
+
+{\ttfamily \#include $<$Estimate\-Posture.\-h$>$}
+
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+{\bf $\sim$\-Kinect} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
+void {\bf initialize} ()
+\begin{DoxyCompactList}\small\item\em Kinectの初期化 \end{DoxyCompactList}\item 
+void {\bf run} ()
+\begin{DoxyCompactList}\small\item\em Kinectによる処理 \end{DoxyCompactList}\item 
+void {\bf draw\-R\-G\-B\-Image} (cv\-::\-Mat \&image)
+\begin{DoxyCompactList}\small\item\em R\-G\-B画像の描画 \end{DoxyCompactList}\item 
+void {\bf draw\-Depth\-Image} (cv\-::\-Mat \&image)
+\begin{DoxyCompactList}\small\item\em Depth画像の描画 \end{DoxyCompactList}\item 
+void {\bf Get\-Depth\-Data} (cv\-::\-Mat \&image)
+\begin{DoxyCompactList}\small\item\em Depthデータの取得 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{詳解}
+Kinect操作 
+
+ Estimate\-Posture.\-h の 59 行目に定義があります。
+
+
+
+\subsection{構築子と解体子}
+\index{Kinect@{Kinect}!$\sim$\-Kinect@{$\sim$\-Kinect}}
+\index{$\sim$\-Kinect@{$\sim$\-Kinect}!Kinect@{Kinect}}
+\subsubsection[{$\sim$\-Kinect}]{\setlength{\rightskip}{0pt plus 5cm}Kinect\-::$\sim$\-Kinect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_kinect_a3f417dc4deed8106a97f217c26326e12}
+
+
+デストラクタ 
+
+\doxyref{Kinect\-::$\sim$\-Kinect()}{p.}{class_kinect_a3f417dc4deed8106a97f217c26326e12}関数.\-デストラクタ
+
+
+\begin{DoxyParams}{引数}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+ Kinect\-Func.\-cpp の 14 行目に定義があります。
+
+
+\begin{DoxyCode}
+15 \{
+16     \textcolor{comment}{/* 終了処理 */}
+17     \textcolor{keywordflow}{if} (kinect != 0)\{
+18         kinect->NuiShutdown(); \textcolor{comment}{//Kinectの終了処理}
+19         kinect->Release(); \textcolor{comment}{//インスタンスの解放}
+20     \}
+21 \}
+\end{DoxyCode}
+
+
+\subsection{関数詳解}
+\index{Kinect@{Kinect}!draw\-Depth\-Image@{draw\-Depth\-Image}}
+\index{draw\-Depth\-Image@{draw\-Depth\-Image}!Kinect@{Kinect}}
+\subsubsection[{draw\-Depth\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Kinect\-::draw\-Depth\-Image (
+\begin{DoxyParamCaption}
+\item[{cv\-::\-Mat \&}]{image}
+\end{DoxyParamCaption}
+)}\label{class_kinect_a3f02c65251d48dcf997f4d882855583c}
+
+
+Depth画像の描画 
+
+void \doxyref{Kinect\-::draw\-Depth\-Image()}{p.}{class_kinect_a3f02c65251d48dcf997f4d882855583c}関数.\-距離データを取得する
+
+
+\begin{DoxyParams}{引数}
+{\em image} & Kinectが取得した画像 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+
+\end{DoxyReturn}
+
+
+ Kinect\-Func.\-cpp の 103 行目に定義があります。
+
+
+
+参照先 C\-A\-M\-E\-R\-A\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N, E\-R\-R\-O\-R\-\_\-\-C\-H\-E\-C\-K.
+
+
+
+参照元 run().
+
+
+\begin{DoxyCode}
+104 \{
+105     \textcolor{comment}{/* 距離画像準備.距離画像がほしい場合のみ利用する */}
+106     \textcolor{comment}{//image = cv::Mat(height,width,CV\_8UC1,cv::Scalar(0));}
+107 
+108     \textcolor{comment}{/* 距離カメラのフレームデータを取得する */}
+109     NUI\_IMAGE\_FRAME depthFrame = \{ 0 \}; \textcolor{comment}{//すべてのフレームを0で初期化}
+110     ERROR_CHECK(kinect->NuiImageStreamGetNextFrame(depthStreamHandle, 0, &depthFrame));
+111     
+112     \textcolor{comment}{/* 距離データを取得する */}
+113     NUI\_LOCKED\_RECT depthData = \{ 0 \};
+114     depthFrame.pFrameTexture->LockRect(0, &depthData, 0, 0);
+115 
+116     USHORT* depth = (USHORT*)depthData.pBits;
+117 
+118     for (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < (depthData.size / \textcolor{keyword}{sizeof}(USHORT)); ++i)\{
+119         USHORT distance = ::NuiDepthPixelToDepth(depth[i]);
+120 
+121         LONG depthX = i%width;
+122         LONG depthY = i / width;
+123 
+124         LONG colorX = depthX;
+125         LONG colorY = depthY;
+126 
+127         \textcolor{comment}{//image.at<UCHAR>(colorY,colorX) = distance/8192.0*255.0;}
+128 
+129         kinect->NuiImageGetColorPixelCoordinatesFromDepthPixelAtResolution(
+      CAMERA_RESOLUTION, CAMERA_RESOLUTION, 0, depthX, depthY, depth[i], &colorX, &colorY);
+130     \}
+131     ERROR_CHECK(kinect->NuiImageStreamReleaseFrame(depthStreamHandle, &depthFrame));
+132 \}
+\end{DoxyCode}
+\index{Kinect@{Kinect}!draw\-R\-G\-B\-Image@{draw\-R\-G\-B\-Image}}
+\index{draw\-R\-G\-B\-Image@{draw\-R\-G\-B\-Image}!Kinect@{Kinect}}
+\subsubsection[{draw\-R\-G\-B\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Kinect\-::draw\-R\-G\-B\-Image (
+\begin{DoxyParamCaption}
+\item[{cv\-::\-Mat \&}]{image}
+\end{DoxyParamCaption}
+)}\label{class_kinect_a1f33b5d418f8b2ef4506444938e37392}
+
+
+R\-G\-B画像の描画 
+
+void \doxyref{Kinect\-::draw\-R\-G\-B\-Image()}{p.}{class_kinect_a1f33b5d418f8b2ef4506444938e37392}関数.\-R\-G\-Bデータを取得する
+
+
+\begin{DoxyParams}{引数}
+{\em image} & Kinectが取得した画像 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+
+\end{DoxyReturn}
+
+
+ Kinect\-Func.\-cpp の 81 行目に定義があります。
+
+
+
+参照先 E\-R\-R\-O\-R\-\_\-\-C\-H\-E\-C\-K.
+
+
+
+参照元 run().
+
+
+\begin{DoxyCode}
+82 \{
+83     \textcolor{comment}{/* RGBカメラのフレームデータを取得する */}
+84     NUI\_IMAGE\_FRAME imageFrame = \{ 0 \}; \textcolor{comment}{//すべてのフレームを0で初期化}
+85     ERROR_CHECK(kinect->NuiImageStreamGetNextFrame(imageStreamHandle, 0, &imageFrame)); \textcolor{comment}{//新しいフレームを取得する}
+86 
+87     \textcolor{comment}{/* フレームの画像データを取得する */}
+88     NUI\_LOCKED\_RECT colorData;
+89     imageFrame.pFrameTexture->LockRect(0, &colorData, 0, 0);
+90 
+91     \textcolor{comment}{/* フレームの画像データを取得する */}
+92     image = cv::Mat(height, width, CV\_8UC4, colorData.pBits);
+93 
+94     \textcolor{comment}{/* フレームデータを解放する */}
+95     ERROR_CHECK(kinect->NuiImageStreamReleaseFrame(imageStreamHandle, &imageFrame));
+96 \}
+\end{DoxyCode}
+\index{Kinect@{Kinect}!Get\-Depth\-Data@{Get\-Depth\-Data}}
+\index{Get\-Depth\-Data@{Get\-Depth\-Data}!Kinect@{Kinect}}
+\subsubsection[{Get\-Depth\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void Kinect\-::\-Get\-Depth\-Data (
+\begin{DoxyParamCaption}
+\item[{cv\-::\-Mat \&}]{image}
+\end{DoxyParamCaption}
+)}\label{class_kinect_a58dbb71010ac6da69c76c8bea6aadd01}
+
+
+Depthデータの取得 
+
+void \doxyref{Kinect\-::\-Get\-Depth\-Data()}{p.}{class_kinect_a58dbb71010ac6da69c76c8bea6aadd01}関数.\-depthdataをdist[]へ読み込む.(x,y,z)のデータを作る
+
+
+\begin{DoxyParams}{引数}
+{\em image} & Kinectが取得した画像 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+
+\end{DoxyReturn}
+
+
+ Kinect\-Func.\-cpp の 139 行目に定義があります。
+
+
+
+参照先 dist, E\-R\-R\-O\-R\-\_\-\-C\-H\-E\-C\-K.
+
+
+
+参照元 run().
+
+
+\begin{DoxyCode}
+140 \{
+141     FILE *fp1, *fp2; \textcolor{comment}{//ファイルポインタ}
+142     errno\_t error1, error2; \textcolor{comment}{//errno\_t型の変数}
+143 
+144     \textcolor{keywordflow}{if} (error1 = fopen\_s(&fp1, \textcolor{stringliteral}{"data/depthdata.txt"}, \textcolor{stringliteral}{"w"}) != 0)\{
+145         \textcolor{keywordflow}{throw} runtime\_error(\textcolor{stringliteral}{"depthdataファイルが開けません"});
+146     \}
+147 
+148     \textcolor{keywordflow}{if} (error2 = fopen\_s(&fp2, \textcolor{stringliteral}{"data/xyz.txt"}, \textcolor{stringliteral}{"w"}) != 0)\{
+149         \textcolor{keywordflow}{throw} runtime\_error(\textcolor{stringliteral}{"xyz.txtか開けません"});
+150     \}
+151 
+152     \textcolor{comment}{/* 距離カメラのフレームデータを取得する */}
+153     NUI\_IMAGE\_FRAME depthFrame = \{ 0 \}; \textcolor{comment}{//すべてのフレームを0で初期化}
+154     ERROR_CHECK(kinect->NuiImageStreamGetNextFrame(depthStreamHandle, 0, &depthFrame));
+155 
+156     \textcolor{comment}{/* 距離データを取得する */}
+157     NUI\_LOCKED\_RECT depthData = \{ 0 \};
+158     depthFrame.pFrameTexture->LockRect(0, &depthData, 0, 0);
+159 
+160     USHORT* depth = (USHORT*)depthData.pBits;
+161 
+162     for (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < (depthData.size / \textcolor{keyword}{sizeof}(USHORT)); ++i)\{
+163         USHORT distance = ::NuiDepthPixelToDepth(depth[i]);
+164 
+165         fprintf(fp1, \textcolor{stringliteral}{"%d\(\backslash\)n"}, distance);
+166         dist[i] = distance; \textcolor{comment}{//距離データを変数dist[i]に格納}
+167     \}
+168 
+169     \textcolor{comment}{/* (x,y,z)の組を作る */}
+170     \textcolor{keywordtype}{int} d = 0;
+171     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} y = 0; y < 480; y++)\{
+172         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} x = 0; x < 640; x++)\{
+173             fprintf(fp2, \textcolor{stringliteral}{"%d %d %d\(\backslash\)n"},x, y, dist[d]);
+174             d++;
+175         \}
+176     \}
+177 
+178     fclose(fp1);
+179     fclose(fp2);
+180 
+181     ERROR_CHECK(kinect->NuiImageStreamReleaseFrame(depthStreamHandle, &depthFrame));
+182 \}
+\end{DoxyCode}
+\index{Kinect@{Kinect}!initialize@{initialize}}
+\index{initialize@{initialize}!Kinect@{Kinect}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void Kinect\-::initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_kinect_a79f66d96dc810bf09a9d3cfe4f1f2671}
+
+
+Kinectの初期化 
+
+void \doxyref{Kinect\-::initialize()}{p.}{class_kinect_a79f66d96dc810bf09a9d3cfe4f1f2671}関数.\-Kinectの初期化
+
+
+\begin{DoxyParams}{引数}
+{\em @return} & \\
+\hline
+\end{DoxyParams}
+
+
+ Kinect\-Func.\-cpp の 52 行目に定義があります。
+
+
+
+参照先 C\-A\-M\-E\-R\-A\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N, E\-R\-R\-O\-R\-\_\-\-C\-H\-E\-C\-K.
+
+
+
+参照元 main().
+
+
+\begin{DoxyCode}
+53 \{
+54     createInstance(); \textcolor{comment}{//createInstance()を呼び出す}
+55 
+56     \textcolor{comment}{/* Kinectの設定を初期化する */}
+57     ERROR_CHECK(kinect->NuiInitialize(NUI\_INITIALIZE\_FLAG\_USES\_COLOR | NUI\_INITIALIZE\_FLAG\_USES\_DEPTH)); \textcolor{comment}{//
+      RGB-Dカメラを扱うためのフラグ追加}
+58 
+59     \textcolor{comment}{/* RGBカメラの初期化 */}
+60     ERROR_CHECK(kinect->NuiImageStreamOpen(NUI\_IMAGE\_TYPE\_COLOR, 
+      CAMERA_RESOLUTION, 0, 2, 0, &imageStreamHandle));
+61 
+62     \textcolor{comment}{/* 距離カメラの初期化 */}
+63     ERROR_CHECK(kinect->NuiImageStreamOpen(NUI\_IMAGE\_TYPE\_DEPTH, 
+      CAMERA_RESOLUTION, 0, 2, 0, &depthStreamHandle));
+64 
+65     \textcolor{comment}{/* Nearモード.使用しない場合はコメントアウトする */}
+66     ERROR_CHECK(kinect->NuiImageStreamSetImageFrameFlags(depthStreamHandle, 
+      NUI\_IMAGE\_STREAM\_FLAG\_ENABLE\_NEAR\_MODE));
+67 
+68     \textcolor{comment}{/* フレーム更新のイベントハンドルを作成する */}
+69     streamEvent = ::CreateEvent(0, TRUE, FALSE, 0);
+70     ERROR_CHECK(kinect->NuiSetFrameEndEvent(streamEvent, 0));
+71 
+72     \textcolor{comment}{/* 指定した解像度の画面サイズを取得する */}
+73     ::NuiImageResolutionToSize(CAMERA_RESOLUTION, width, height);
+74 \}
+\end{DoxyCode}
+\index{Kinect@{Kinect}!run@{run}}
+\index{run@{run}!Kinect@{Kinect}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void Kinect\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_kinect_a0af275912326a92d03a9762a582965ea}
+
+
+Kinectによる処理 
+
+void \doxyref{Kinect\-::run()}{p.}{class_kinect_a0af275912326a92d03a9762a582965ea}関数.\-Kinectの処理を実行する
+
+
+\begin{DoxyParams}{引数}
+{\em @return} & \\
+\hline
+\end{DoxyParams}
+
+
+ Kinect\-Func.\-cpp の 189 行目に定義があります。
+
+
+
+参照先 cnt\-\_\-getcoordinate, draw\-Depth\-Image(), draw\-R\-G\-B\-Image(), f1, Get\-Depth\-Data(), M\-A\-X\-\_\-\-P\-O\-I\-N\-T\-S, Mouse(), points, sumtime, time1, time1th.
+
+
+
+参照元 main().
+
+
+\begin{DoxyCode}
+190 \{
+191     cv::Mat image; \textcolor{comment}{//Kinectが取得した画像}
+192 
+193     cout << \textcolor{stringliteral}{"============== メニュー =============="} << endl;
+194     cout << \textcolor{stringliteral}{"1：今写っている平面を計測する"} << endl;
+195     cout << \textcolor{stringliteral}{"2：計測を終了する"} << endl;
+196     cout << \textcolor{stringliteral}{"(計測の途中で終了することもできます)"} << endl;
+197     cout << \textcolor{stringliteral}{"======================================"} << endl << endl;
+198 
+199     \textcolor{comment}{//メインループ}
+200     \textcolor{keywordflow}{while} (1)\{
+201         \textcolor{comment}{/* データの更新を待つ */}
+202         DWORD ret = ::WaitForSingleObject(streamEvent, INFINITE);
+203         ::ResetEvent(streamEvent); \textcolor{comment}{//次のイベントに備えてリセット}
+204 
+205         drawRGBImage(image); \textcolor{comment}{//RGBデータの取得}
+206 
+207         drawDepthImage(image); \textcolor{comment}{//Depthデータの取得}
+208 
+209         cv::namedWindow(\textcolor{stringliteral}{"動画像"}, CV\_WINDOW\_AUTOSIZE | CV\_WINDOW\_FREERATIO); \textcolor{comment}{//動画像が表示されるウインドウを定義}
+210         cv::imshow(\textcolor{stringliteral}{"動画像"}, image); \textcolor{comment}{//動画像を表示}
+211 
+212         \textcolor{keywordtype}{int} key = cv::waitKey(1); \textcolor{comment}{//動画像を表示し続ける}
+213 
+214         \textcolor{keywordflow}{if} (key == \textcolor{charliteral}{'2'})\{
+215             cout << \textcolor{stringliteral}{"終了します"} << endl;
+216             \textcolor{keywordflow}{break};
+217         \}
+218         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (key == \textcolor{charliteral}{'1'})\{
+219             sumtime = 0; \textcolor{comment}{//処理にかかる合計時間の初期化}
+220             f1 = 1000.0 / cv::getTickFrequency();
+221             time1 = cv::getTickCount();
+222             time1th = 0;
+223 
+224             points = 0; \textcolor{comment}{//取得した点の数を初期化}
+225             cnt_getcoordinate = 0; \textcolor{comment}{//座標を取得した回数を初期化}
+226 
+227             cv::namedWindow(\textcolor{stringliteral}{"静止画像"}, CV\_WINDOW\_AUTOSIZE | CV\_WINDOW\_FREERATIO); \textcolor{comment}{//静止画像が表示されるウインドウを定義}
+228 
+229             cout << MAX_POINTS << \textcolor{stringliteral}{"回クリックしてください"} << endl;
+230 
+231             cv::setMouseCallback(\textcolor{stringliteral}{"静止画像"}, Mouse); \textcolor{comment}{//マウスコールバック関数の設定}
+232 
+233             cv::imwrite(\textcolor{stringliteral}{"plot\_img/rgbimage.bmp"}, image); \textcolor{comment}{//取得した静止画像を保存}
+234             cv::imshow(\textcolor{stringliteral}{"静止画像"}, image); \textcolor{comment}{//取得した静止画像を表示}
+235 
+236             time1th = (cv::getTickCount() - time1)*f1; \textcolor{comment}{//処理にかかった時間を計測}
+237             cout << \textcolor{stringliteral}{"\(\backslash\)"1\(\backslash\)"キーを入力してから表示するまでの時間"} << time1th << \textcolor{stringliteral}{"[ms]"} << endl << endl;
+238 
+239             cout << \textcolor{stringliteral}{"============================ 取得した点の座標 ============================"} << endl;
+240 
+241             GetDepthData(image); \textcolor{comment}{//距離データを取得}
+242         \}
+243     \}
+244 \}\end{DoxyCode}
+
+
+このクラス詳解は次のファイルから抽出されました\-:\begin{DoxyCompactItemize}
+\item 
+{\bf Estimate\-Posture.\-h}\item 
+{\bf Kinect\-Func.\-cpp}\end{DoxyCompactItemize}
