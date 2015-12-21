@@ -75,6 +75,11 @@ void EstimatePosture::LeastSqureMethod(double real_x[MAX_POINTS - 1], double rea
 */
 void EstimatePosture::CalcYawRollPitch(double a, double b, double c)
 {
+	FILE *fp;
+	char pos[64];
+	sprintf_s(pos, "data/pos.csv");
+	fopen_s(&fp, pos, "w");
+	
 	char input = ' ';
 	
 	yaw_rad = -atan(a);
@@ -86,10 +91,14 @@ void EstimatePosture::CalcYawRollPitch(double a, double b, double c)
 	pitch_rad = atan2(1, b);
 	pitch_deg = pitch_rad / PI*180.0;
 
+	fprintf_s(fp, "%f,%f,%f\n", yaw_deg, roll_deg, pitch_deg);
+
 	cout << "\n";
 	cout << "====== Žp¨Œv‘ªŒ‹‰Ê ======" << endl;
 	cout << "Yaw : " << yaw_deg << "[deg]" << endl;
 	cout << "Roll : " << roll_deg << "[deg]" << endl;
 	cout << "Pitch : " << pitch_deg << "[deg]" << endl;
 	cout << "==========================" << "\n" << endl;
+
+	fclose(fp);
 }

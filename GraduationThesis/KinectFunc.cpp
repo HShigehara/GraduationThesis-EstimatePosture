@@ -181,6 +181,23 @@ void Kinect::GetDepthData(cv::Mat& image)
 	ERROR_CHECK(kinect->NuiImageStreamReleaseFrame(depthStreamHandle, &depthFrame));
 }
 
+void Kinect::loadInternalCameraParameter(const string camera_param)
+{
+	cv::FileStorage fs(camera_param, cv::FileStorage::READ);
+	fs["camera_matrix"] >> internal_cameraparam;
+	fs["distortion_coefficient"] >> distortion_coefficient;
+
+	return;
+}
+
+cv::Mat Kinect::getUndistortionImage(cv::Mat &image)
+{
+	cv::Mat undistortion_img;
+	cv::undistort(image, undistortion_img, internal_cameraparam, distortion_coefficient, cv::Mat());
+
+	return undistortion_img;
+}
+
 /*!
 * @brief void Kinect::run()関数.Kinectの処理を実行する
 * @param
@@ -205,6 +222,10 @@ void Kinect::run()
 		drawRGBImage(image); //RGBデータの取得
 
 		drawDepthImage(image); //Depthデータの取得
+
+		loadInternalCameraParameter("cameraParam.xml");
+
+		image = getUndistortionImage(image);
 
 		cv::namedWindow("動画像", CV_WINDOW_AUTOSIZE | CV_WINDOW_FREERATIO); //動画像が表示されるウインドウを定義
 		cv::imshow("動画像", image); //動画像を表示

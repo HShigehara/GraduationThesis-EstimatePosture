@@ -26,7 +26,7 @@ using namespace std;
 #include<opencv2\imgproc\imgproc.hpp>
 
 /* 定義 */
-#define MAX_POINTS 9 //!< マウスクリック時に取得する点の数
+#define MAX_POINTS 20 //!< マウスクリック時に取得する点の数
 #define PI 3.1415926535897932384626433832795 //!<円周率π
 
 /* グローバル変数 */
@@ -48,6 +48,9 @@ extern double time1th; //!<"p"キーを入力してから表示するまでの時間
 extern double time2th; //!<9点目をクリックしてから回転角度を求めるまでの時間
 extern double time3th; //!<gnuplotが作業を行っている時間
 extern double sumtime; //!<処理にかかった時間の合計
+
+extern cv::Mat internal_cameraparam;
+extern cv::Mat distortion_coefficient;
 
 extern void Mouse(int event,int x,int y,int flags,void *param);
 
@@ -75,6 +78,9 @@ public:
 	void drawRGBImage(cv::Mat& image); //!<RGB画像の描画
 	void drawDepthImage(cv::Mat& image); //!<Depth画像の描画
 	void GetDepthData(cv::Mat& image); //!<Depthデータの取得
+
+	void loadInternalCameraParameter(const string camera_param); //!<キャリブレーション用のカメラパラメータを取得する
+	cv::Mat getUndistortionImage(cv::Mat &image);
 };
 
 /*!

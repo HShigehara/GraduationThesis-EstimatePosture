@@ -27,6 +27,9 @@ double time2th; //!<9点目をクリックしてから回転角度を求めるまでの時間
 double time3th; //!<gnuplotが作業を行っている時間
 double sumtime; //!<処理にかかった時間の合計
 
+cv::Mat internal_cameraparam;
+cv::Mat distortion_coefficient;
+
 void Mouse();
 
 int main()
@@ -37,7 +40,7 @@ int main()
 		kinect.initialize();
 
 		_mkdir("data");
-		_mkdir("plot_img");
+		//_mkdir("plot_img");
 
 		kinect.run();
 

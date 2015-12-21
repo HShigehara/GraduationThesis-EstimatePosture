@@ -19,6 +19,14 @@ int CoordinateTransform::ct2Dto3D(cv::Point pushpt, int points)
 
 	ofstream ofs("data/RealPoints.dat"); //3次元座標に変換した時の(x,y,z)
 
+	ofstream ofs_ave("data/ave.csv");
+	double sum_x = 0;
+	double sum_y = 0;
+	double sum_z = 0;
+	double ave_x = 0;
+	double ave_y = 0;
+	double ave_z = 0;
+
 	pt[cnt_getcoordinate] = pushpt; //クリック時に取得した点の座標をコピーする
 
 	onedim[cnt_getcoordinate] = pt[cnt_getcoordinate].x + 640 * pt[cnt_getcoordinate].y - 640; //2次元で表されている点を1次元に変換する
@@ -42,8 +50,18 @@ int CoordinateTransform::ct2Dto3D(cv::Point pushpt, int points)
 	//0~8までの点が揃ったらそれぞれの3次元座標をファイルへ出力し最小二乗法を行う
 	if (points == MAX_POINTS - 1){
 		for (int i = 0; i < MAX_POINTS; i++){
+			sum_x = sum_x + real_x[i];
+			sum_y = sum_y + real_y[i];
+			sum_z = sum_z + real_z[i];
+
 			ofs << real_x[i] << " " << real_y[i] << " " << real_z[i] << endl;
 		}
+
+		ave_x = sum_x / MAX_POINTS;
+		ave_y = sum_y / MAX_POINTS;
+		ave_z = sum_z / MAX_POINTS;
+		ofs_ave << ave_x << "," << ave_y << "," << ave_z << endl;
+
 		//処理時間を計測する
 		f2 = 1000.0 / cv::getTickFrequency();
 		time2 = cv::getTickCount();

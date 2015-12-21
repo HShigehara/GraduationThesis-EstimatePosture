@@ -37,7 +37,7 @@ void Plot::PlotData(double a, double b, double c)
 	//デフォルトで表示された画像を保存する
 	fputs("set title \"Default\"\n", gnuplot);
 	fputs("set term jpeg\n", gnuplot);
-	fputs("set output \"plot_img/default.jpg\"\n", gnuplot);
+	fputs("set output \"data/default.jpg\"\n", gnuplot);
 	fputs("rep\n", gnuplot);
 
 	//X-Y平面でプロット.Z軸とZ軸のラベルを消す
@@ -48,7 +48,7 @@ void Plot::PlotData(double a, double b, double c)
 	fputs("set view 0,0,1,1\n", gnuplot);
 	fputs("set title \"X-Y Plane\"\n", gnuplot);
 	fputs("set term jpeg\n", gnuplot);
-	fputs("set output \"plot_img/X-Y_Plane.jpg\"\n", gnuplot);
+	fputs("set output \"data/X-Y_Plane.jpg\"\n", gnuplot);
 	fputs("rep\n", gnuplot);
 
 	//X-Z平面でプロット.Z軸とZ軸のラベル表示し、Y軸とY軸のラベルを消す
@@ -61,7 +61,7 @@ void Plot::PlotData(double a, double b, double c)
 	fputs("set view 90,0,1,1\n", gnuplot);
 	fputs("set title \"X-Z Plane\"\n", gnuplot);
 	fputs("set term jpeg\n", gnuplot);
-	fputs("set output \"plot_img/X-Z_Plane.jpg\"\n", gnuplot);
+	fputs("set output \"data/X-Z_Plane.jpg\"\n", gnuplot);
 	fputs("rep\n", gnuplot);
 
 	//X-Y平面でプロット.Y軸とY軸のラベルを表示し、X軸とX軸のラベルを消す
@@ -74,7 +74,7 @@ void Plot::PlotData(double a, double b, double c)
 	fputs("set view 0,0,1,1\n", gnuplot);
 	fputs("set title \"Y-Z Plane\"\n", gnuplot);
 	fputs("set term jpeg\n", gnuplot);
-	fputs("set output \"plot_img/Y-Z_Plane.jpg\"\n", gnuplot);
+	fputs("set output \"data/Y-Z_Plane.jpg\"\n", gnuplot);
 	fputs("rep\n", gnuplot);
 
 	//ここまでの処理をgnuplotへ流し閉じる
