@@ -26,7 +26,7 @@ using namespace std;
 #include<opencv2\imgproc\imgproc.hpp>
 
 /* 定義 */
-#define MAX_POINTS 20 //!< マウスクリック時に取得する点の数
+#define MAX_POINTS 17 //!< マウスクリック時に取得する点の数
 #define PI 3.1415926535897932384626433832795 //!<円周率π
 
 /* グローバル変数 */

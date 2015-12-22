@@ -226,6 +226,7 @@ void Kinect::run()
 		loadInternalCameraParameter("cameraParam.xml");
 
 		image = getUndistortionImage(image);
+		cv::imwrite("image.jpg", image);
 
 		cv::namedWindow("動画像", CV_WINDOW_AUTOSIZE | CV_WINDOW_FREERATIO); //動画像が表示されるウインドウを定義
 		cv::imshow("動画像", image); //動画像を表示
